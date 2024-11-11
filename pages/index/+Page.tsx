@@ -1,5 +1,16 @@
 import HomeHeaderImage from "../../assets/home-header.png";
 import Gun21Image from "../../assets/gun2-1.jpg";
+import { Button } from "../../components/ui/button";
+import { ArrowRightIcon } from "../../components/icons/arrow-right";
+import PressAImage from "../../assets/pressA-1.png";
+import AcediaGuide114Iamge from "../../assets/acedia guide (1)-14.png";
+import Collage1Image from "../../assets/collage-1.png";
+import ServicesGridImage from "../../assets/services-grid.png";
+import { ServiceCard } from "./service-card";
+import ModelFImage from "../../assets/model-f.png";
+import TwitterBannerImage from "../../assets/twitter-banner-1.png";
+import InProgress1Image from "../../assets/in-progress-1.png";
+import { SocialLinks } from "./social-links";
 
 export default function Page() {
   return (
@@ -18,28 +29,151 @@ export default function Page() {
               </p>
             </div>
             <div className="shrink-0">
-              <button
-                type="button"
-                className="font-regular flex items-center gap-4 rounded-full bg-[#A2FF00] px-6 py-1.5 font-serif text-base leading-[36px] text-black transition-colors hover:bg-[#8ad900] md:px-8 md:py-2 md:text-lg md:font-medium"
-              >
+              <Button variant="lime" icon={<ArrowRightIcon />}>
                 Wishlist on Steam
-                <svg
-                  width={20}
-                  height={20}
-                  viewBox="0 0 25 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="hidden text-black md:block"
-                >
-                  <path
-                    d="M20.8107 12.5306L14.0607 19.2806C13.9199 19.4213 13.7291 19.5004 13.53 19.5004C13.331 19.5004 13.1401 19.4213 12.9994 19.2806C12.8587 19.1399 12.7796 18.949 12.7796 18.75C12.7796 18.551 12.8587 18.3601 12.9994 18.2194L18.4697 12.75H3.78003C3.58112 12.75 3.39035 12.671 3.2497 12.5303C3.10905 12.3897 3.03003 12.1989 3.03003 12C3.03003 11.8011 3.10905 11.6103 3.2497 11.4697C3.39035 11.329 3.58112 11.25 3.78003 11.25H18.4697L12.9994 5.78061C12.8587 5.63988 12.7796 5.44901 12.7796 5.24999C12.7796 5.05097 12.8587 4.8601 12.9994 4.71936C13.1401 4.57863 13.331 4.49957 13.53 4.49957C13.7291 4.49957 13.9199 4.57863 14.0607 4.71936L20.8107 11.4694C20.8804 11.539 20.9357 11.6217 20.9734 11.7128C21.0112 11.8038 21.0306 11.9014 21.0306 12C21.0306 12.0986 21.0112 12.1961 20.9734 12.2872C20.9357 12.3782 20.8804 12.461 20.8107 12.5306Z"
-                    fill="currentcolor"
-                  />
-                </svg>
-              </button>
+              </Button>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="w-full -translate-y-3 bg-[#02070A]">
+        <div className="flex flex-nowrap items-center justify-between gap-20 p-[70px]">
+          <div className="w-full flex-shrink">
+            <div className="w-full max-w-[calc(100%-150px)] font-serif text-white sm:max-w-[calc(100%-280px)] md:max-w-[860px]">
+              <h2 className="mb-[11px] text-2xl font-semibold uppercase leading-6 md:text-[55px] md:leading-[60px]">
+                Your friendly neighborhood Game devs & creatives
+              </h2>
+              <p className="mb-9 max-w-[860px] text-base leading-5 md:text-[27px] md:leading-[36px]">
+                If your neighborhood happens to be Islamabad, Pakistan.
+              </p>
+            </div>
+            <div className="flex w-full justify-center md:justify-start">
+              <Button variant="blue" icon={<ArrowRightIcon />}>
+                More about our game
+              </Button>
+            </div>
+          </div>
+          <div className="absolute right-10 top-5 w-[150px] max-w-[700px] md:static md:min-w-[300px]">
+            <img src={PressAImage} className="h-auto w-full object-contain" />
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden px-20 pt-[190px]">
+          <img
+            src={AcediaGuide114Iamge}
+            width="1189px"
+            height="1511px"
+            className="absolute -right-20 top-0 -z-10 translate-y-[-150px] rotate-[-17deg]"
+          />
+          <h2
+            id="our-work"
+            className="font-serif text-[60px] font-semibold uppercase leading-[88px] text-[#A2FF00] underline underline-offset-8"
+          >
+            Our Work
+          </h2>
+          <img src={Collage1Image} className="h-auto w-full" />
+        </div>
+
+        <>
+          <div className="relative overflow-hidden px-20 pt-[100px]">
+            <img src={ServicesGridImage} className="absolute bottom-0 left-0 -z-10 h-auto w-full" />
+            <h2
+              id="our-services"
+              className="mb-[46px] font-serif text-[60px] font-semibold uppercase leading-[88px] text-[#A2FF00] underline underline-offset-8"
+            >
+              Our Services
+            </h2>
+            <div className="flex flex-nowrap items-end gap-16">
+              <div className="pb-[100px]">
+                <div className="mb-6 flex flex-wrap gap-16">
+                  <ServiceCard title="Game Development">
+                    Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
+                    your people.
+                    <br />
+                    <br />
+                    Our tool of choice is Unreal Engine, and our small team of artists &amp; developers (but first of
+                    all gamers) is up for any development challenge.
+                    <br />
+                    <br />
+                    <span className="font-semibold text-[#CBFF72]">
+                      You bring us the idea, we bring you the execution.
+                    </span>
+                  </ServiceCard>
+                  <ServiceCard title="Game Development">
+                    Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
+                    your people.
+                    <br />
+                    <br />
+                    Our tool of choice is Unreal Engine, and our small team of artists &amp; developers (but first of
+                    all gamers) is up for any development challenge.
+                    <br />
+                    <br />
+                    <span className="font-semibold text-[#CBFF72]">
+                      You bring us the idea, we bring you the execution.
+                    </span>
+                  </ServiceCard>
+                </div>
+                <div className="flex flex-wrap gap-16">
+                  <ServiceCard title="Game Development">
+                    Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
+                    your people.
+                    <br />
+                    <br />
+                    Our tool of choice is Unreal Engine, and our small team of artists &amp; developers (but first of
+                    all gamers) is up for any development challenge.
+                    <br />
+                    <br />
+                    <span className="font-semibold text-[#CBFF72]">
+                      You bring us the idea, we bring you the execution.
+                    </span>
+                  </ServiceCard>
+                  <ServiceCard title="Game Development">
+                    Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
+                    your people.
+                    <br />
+                    <br />
+                    Our tool of choice is Unreal Engine, and our small team of artists &amp; developers (but first of
+                    all gamers) is up for any development challenge.
+                    <br />
+                    <br />
+                    <span className="font-semibold text-[#CBFF72]">
+                      You bring us the idea, we bring you the execution.
+                    </span>
+                  </ServiceCard>
+                </div>
+              </div>
+              <img src={ModelFImage} width="552.33px" height="840.29" />
+            </div>
+          </div>
+          <div className="relative" id="portfolio">
+            <img src={TwitterBannerImage} className="h-auto w-full" />
+            <div className="absolute left-0 top-0 flex h-full w-full items-center pl-[90px]">
+              <div className="font-serif">
+                <h2 className="mb-[24px] text-[50px] font-semibold uppercase leading-[79px] tracking-[-0.56px] text-white">
+                  JOIN THE GRAVE KEEPER’S DISCORD
+                </h2>
+                <p className="mb-12 max-w-[750px] text-lg font-medium leading-[28px] text-white text-opacity-90">
+                  Dev updates, exclusive artwork from the game and behind-the scenes from the team, it’s all here. Wanna
+                  be a part of our little community and see The Grave Keeper come to life in real-time?
+                </p>
+                <Button variant="blue" icon={<ArrowRightIcon />}>
+                  Join Up!
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div id="blog" className="relative -mt-2 flex w-full flex-col items-center gap-16 bg-[#161616] py-[80px]">
+            <img src={InProgress1Image} className="h-auto max-w-[200px]" />
+            <h2 className="max-w-[490px] text-center font-serif text-[60px] font-semibold leading-[63px] text-[#A2FF00] text-opacity-80">
+              Let’s build something really good together!
+            </h2>
+            <Button variant="blue" icon={<ArrowRightIcon className="text-[#CBFF72]" />}>
+              Reach out to us via email
+            </Button>
+            <SocialLinks />
+          </div>
+        </>
       </div>
     </>
   );
