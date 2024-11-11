@@ -7,12 +7,18 @@ import Acedia06Icon from "../../../assets/acedia-06.svg";
 export const Navbar: FC = () => {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
+  const toggleMobileSidebar = (open: boolean) => {
+    setIsMobileSidebarOpen(open);
+    if (open) document.body.classList.add("max-h-screen", "overflow-hidden");
+    else document.body.classList.remove("max-h-screen", "overflow-hidden");
+  };
+
   return (
     <section className="max-w-screen absolute left-0 top-0 z-50 flex max-h-screen w-full items-start justify-center">
       <div className="absolute left-0 top-0 flex h-[140px] w-full items-center justify-between">
         <div className="absolute left-0 top-[70px] order-1 -translate-y-1/2 sm:static sm:block sm:translate-y-0 lg:hidden">
           <div className="px-6">
-            <button type="button" onClick={() => setIsMobileSidebarOpen(true)}>
+            <button type="button" onClick={() => toggleMobileSidebar(true)}>
               <img src={MenuIcon} alt="Hamburger Icon" width="20px" height="20px" />
             </button>
           </div>
@@ -26,7 +32,7 @@ export const Navbar: FC = () => {
         </div>
       </div>
       <DesktopNavbar />
-      {isMobileSidebarOpen && <MobileNavbar onClose={() => setIsMobileSidebarOpen(false)} />}
+      {isMobileSidebarOpen && <MobileNavbar onClose={() => toggleMobileSidebar(false)} />}
     </section>
   );
 };
