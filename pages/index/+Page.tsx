@@ -11,6 +11,8 @@ import ModelFImage from "../../assets/model-f.png";
 import TwitterBannerImage from "../../assets/twitter-banner-1.png";
 import InProgress1Image from "../../assets/in-progress-1.png";
 import { SocialLinks } from "./social-links";
+import AcediaGuide14Image from "../../assets/acedia guide (1)-14.svg";
+import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 
 export default function Page() {
   return (
@@ -163,7 +165,10 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div id="blog" className="relative -mt-2 flex w-full flex-col items-center gap-16 bg-[#161616] py-[80px]">
+          <div className="relative -mt-2 flex w-full flex-col items-center gap-16 bg-[#161616] py-[80px] overflow-hidden">
+            <img src={AcediaGuide14Image} className="absolute right-0 top-0" height={380} width={830} />
+            <img src={AcediaGuide18Image} className="absolute left-0 -top-1/2" height={630} width={730} />
+
             <img src={InProgress1Image} className="h-auto max-w-[200px]" />
             <h2 className="max-w-[490px] text-center font-serif text-[60px] font-semibold leading-[63px] text-[#A2FF00] text-opacity-80">
               Let’s build something really good together!
