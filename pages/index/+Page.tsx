@@ -13,6 +13,8 @@ import InProgress1Image from "../../assets/in-progress-1.png";
 import { SocialLinks } from "./social-links";
 import AcediaGuide14Image from "../../assets/acedia guide (1)-14.svg";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
+import AcediaGuide14ServicesImage from "../../assets/acedia guide (1)-14-services.png";
+import ServiceCardImage from "../../assets/service-image.jpg";
 
 export default function Page() {
   return (
@@ -61,7 +63,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden px-20 pt-[190px]">
+        <div className="relative overflow-hidden px-20 pt-0 md:pt-[190px]">
           <img
             src={AcediaGuide114Iamge}
             width="1189px"
@@ -70,7 +72,7 @@ export default function Page() {
           />
           <h2
             id="our-work"
-            className="font-serif text-[60px] font-semibold uppercase leading-[88px] text-[#A2FF00] underline underline-offset-8"
+            className="font-serif text-3xl  md:text-[60px] text-center md:text-left font-semibold uppercase leading-[88px] text-[#A2FF00] underline underline-offset-8"
           >
             Our Work
           </h2>
@@ -78,18 +80,20 @@ export default function Page() {
         </div>
 
         <>
-          <div className="relative overflow-hidden px-20 pt-[100px]">
+          <div className="relative overflow-hidden px-20 pt-0 md:pt-[100px]">
             <img src={ServicesGridImage} className="absolute bottom-0 left-0 -z-10 h-auto w-full" />
+            <img src={AcediaGuide14ServicesImage} className="absolute -top-20 left-0 -z-10 w-full" />
+
             <h2
               id="our-services"
-              className="mb-[46px] font-serif text-[60px] font-semibold uppercase leading-[88px] text-[#A2FF00] underline underline-offset-8"
+              className="mb-[46px] font-serif text-3xl text-center md:text-left md:text-[60px] font-semibold uppercase leading-[88px] text-[#A2FF00] underline underline-offset-8"
             >
               Our Services
             </h2>
-            <div className="flex flex-nowrap items-end gap-16">
-              <div className="pb-[100px]">
-                <div className="mb-6 flex flex-wrap gap-16">
-                  <ServiceCard title="Game Development">
+            <div className="flex flex-wrap md:flex-nowrap items-end gap-16">
+              <div className="pb-[100px] w-full">
+                <div className="mb-6 flex flex-wrap gap-16 w-full">
+                  <ServiceCard title="Game Development" img={ServiceCardImage}>
                     Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
                     your people.
                     <br />
@@ -102,7 +106,7 @@ export default function Page() {
                       You bring us the idea, we bring you the execution.
                     </span>
                   </ServiceCard>
-                  <ServiceCard title="Game Development">
+                  <ServiceCard title="Game Development" img={ServiceCardImage}>
                     Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
                     your people.
                     <br />
@@ -116,8 +120,8 @@ export default function Page() {
                     </span>
                   </ServiceCard>
                 </div>
-                <div className="flex flex-wrap gap-16">
-                  <ServiceCard title="Game Development">
+                <div className="flex flex-wrap gap-16 w-full">
+                  <ServiceCard title="Game Development" img={ServiceCardImage}>
                     Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
                     your people.
                     <br />
@@ -130,7 +134,7 @@ export default function Page() {
                       You bring us the idea, we bring you the execution.
                     </span>
                   </ServiceCard>
-                  <ServiceCard title="Game Development">
+                  <ServiceCard title="Game Development" img={ServiceCardImage}>
                     Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re
                     your people.
                     <br />
@@ -145,17 +149,17 @@ export default function Page() {
                   </ServiceCard>
                 </div>
               </div>
-              <img src={ModelFImage} width="552.33px" height="840.29" />
+              <img src={ModelFImage} width="552.33px" height="840.29" className="hidden xl:inline" />
             </div>
           </div>
           <div className="relative" id="portfolio">
-            <img src={TwitterBannerImage} className="h-auto w-full" />
-            <div className="absolute left-0 top-0 flex h-full w-full items-center pl-[90px]">
+            <img src={TwitterBannerImage} className="h-auto min-h-[400px] w-full object-cover" />
+            <div className="absolute left-0 top-0 flex h-full w-full items-center p-10 md:p-[90px]">
               <div className="font-serif">
-                <h2 className="mb-[24px] text-[50px] font-semibold uppercase leading-[79px] tracking-[-0.56px] text-white">
+                <h2 className="mb-[24px] text-2xl lg:text-[50px] font-semibold uppercase leading-8 lg:leading-[79px] tracking-[-0.56px] text-white">
                   JOIN THE GRAVE KEEPER’S DISCORD
                 </h2>
-                <p className="mb-12 max-w-[750px] text-lg font-medium leading-[28px] text-white text-opacity-90">
+                <p className="mb-12 max-w-[750px] text-lg lg:text-lg font-medium leading-[28px] text-white text-opacity-90">
                   Dev updates, exclusive artwork from the game and behind-the scenes from the team, it’s all here. Wanna
                   be a part of our little community and see The Grave Keeper come to life in real-time?
                 </p>
