@@ -3939,29 +3939,6 @@ var require_react = __commonJS({
   }
 });
 
-// node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/components/Loading.js
-function LoadingComponent() {
-  return import_react.default.createElement("div", { style: {
-    width: "100%",
-    height: "100%",
-    maxHeight: "100%",
-    background: "linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)",
-    borderRadius: "5px",
-    backgroundSize: "200% 100%",
-    animation: "1.3s vike-react-shine linear infinite",
-    aspectRatio: "2.5/1"
-  } });
-}
-var import_react, Loading_default;
-var init_Loading = __esm({
-  "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/components/Loading.js"() {
-    import_react = __toESM(require_react(), 1);
-    Loading_default = {
-      component: LoadingComponent
-    };
-  }
-});
-
 // node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server-legacy.node.production.min.js
 var require_react_dom_server_legacy_node_production_min = __commonJS({
   "node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server-legacy.node.production.min.js"(exports) {
@@ -7688,12 +7665,12 @@ var require_useStream = __commonJS({
     });
     var StreamProvider = globalObject12.StreamContext.Provider;
     exports.StreamProvider = StreamProvider;
-    function useStream2() {
+    function useStream() {
       const streamUtils = (0, react_1.useContext)(globalObject12.StreamContext);
       (0, utils_1.assertUsage)(streamUtils, getErrMsg2());
       return streamUtils;
     }
-    exports.useStream = useStream2;
+    exports.useStream = useStream;
     function getErrMsg2() {
       if ((0, utils_1.isVikeReactApp)()) {
         return `HTML streaming (https://vike.dev/streaming) disabled: set the setting ${picocolors_1.default.code("stream")} (https://vike.dev/stream) to ${picocolors_1.default.code("true")}.'`;
@@ -11590,20 +11567,15 @@ var init_getGlobalObject2 = __esm({
 // node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/hooks/usePageContext.js
 function PageContextProvider({ pageContext, children }) {
   const { reactContext } = globalObject3;
-  return import_react2.default.createElement(reactContext.Provider, { value: pageContext }, children);
+  return import_react.default.createElement(reactContext.Provider, { value: pageContext }, children);
 }
-function usePageContext() {
-  const { reactContext } = globalObject3;
-  const pageContext = (0, import_react2.useContext)(reactContext);
-  return pageContext;
-}
-var import_react2, globalObject3;
+var import_react, globalObject3;
 var init_usePageContext = __esm({
   "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/hooks/usePageContext.js"() {
-    import_react2 = __toESM(require_react(), 1);
+    import_react = __toESM(require_react(), 1);
     init_getGlobalObject2();
     globalObject3 = getGlobalObject2("PageContextProvider.ts", {
-      reactContext: import_react2.default.createContext(void 0)
+      reactContext: import_react.default.createContext(void 0)
     });
   }
 });
@@ -11661,12 +11633,12 @@ var init_getHeadSetting = __esm({
 
 // node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/integration/getPageElement.js
 function getPageElement(pageContext) {
-  const { Page: Page5, config: { Loading } } = pageContext;
-  let page = Page5 ? import_react3.default.createElement(Page5, null) : null;
+  const { Page, config: { Loading } } = pageContext;
+  let page = Page ? import_react2.default.createElement(Page, null) : null;
   const addSuspense = (el) => {
     if (!Loading?.layout)
       return el;
-    return import_react3.default.createElement(import_react3.Suspense, { fallback: import_react3.default.createElement(Loading.layout, null) }, page);
+    return import_react2.default.createElement(import_react2.Suspense, { fallback: import_react2.default.createElement(Loading.layout, null) }, page);
   };
   page = addSuspense(page);
   [
@@ -11675,38 +11647,38 @@ function getPageElement(pageContext) {
     // Outer wrapping
     ...pageContext.config.Wrapper || []
   ].forEach((Wrap) => {
-    page = import_react3.default.createElement(Wrap, null, page);
+    page = import_react2.default.createElement(Wrap, null, page);
     page = addSuspense(page);
   });
-  page = import_react3.default.createElement(PageContextProvider, { pageContext }, page);
+  page = import_react2.default.createElement(PageContextProvider, { pageContext }, page);
   let renderPromiseResolve;
   let renderPromise = new Promise((r) => renderPromiseResolve = r);
-  page = import_react3.default.createElement(RenderPromiseProvider, { renderPromiseResolve }, page);
+  page = import_react2.default.createElement(RenderPromiseProvider, { renderPromiseResolve }, page);
   if (pageContext.config.reactStrictMode !== false) {
-    page = import_react3.default.createElement(import_react3.default.StrictMode, null, page);
+    page = import_react2.default.createElement(import_react2.default.StrictMode, null, page);
   }
   return { page, renderPromise };
 }
 function RenderPromiseProvider({ children, renderPromiseResolve }) {
-  (0, import_react3.useEffect)(renderPromiseResolve);
+  (0, import_react2.useEffect)(renderPromiseResolve);
   return children;
 }
-var import_react3;
+var import_react2;
 var init_getPageElement = __esm({
   "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/integration/getPageElement.js"() {
-    import_react3 = __toESM(require_react(), 1);
+    import_react2 = __toESM(require_react(), 1);
     init_usePageContext();
   }
 });
 
 // node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/utils/isReactElement.js
 function isReactElement(value) {
-  return (0, import_react4.isValidElement)(value) || Array.isArray(value);
+  return (0, import_react3.isValidElement)(value) || Array.isArray(value);
 }
-var import_react4;
+var import_react3;
 var init_isReactElement = __esm({
   "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/utils/isReactElement.js"() {
-    import_react4 = __toESM(require_react(), 1);
+    import_react3 = __toESM(require_react(), 1);
   }
 });
 
@@ -11803,9 +11775,6 @@ function executeHook(hookFnCaller, hook, pageContext) {
 }
 function isNotDisabled(timeout) {
   return !!timeout && timeout !== Infinity;
-}
-function getPageContext() {
-  return globalObject4.pageContext;
 }
 function providePageContext(pageContext) {
   globalObject4.pageContext = pageContext;
@@ -11915,14 +11884,14 @@ function getHeadElementHtml(Head, pageContext) {
   if (isReactElement(Head)) {
     headElement = Head;
   } else {
-    headElement = import_react5.default.createElement(
+    headElement = import_react4.default.createElement(
       PageContextProvider,
       { pageContext },
-      import_react5.default.createElement(Head, null)
+      import_react4.default.createElement(Head, null)
     );
   }
   if (pageContext.config.reactStrictMode !== false) {
-    headElement = import_react5.default.createElement(import_react5.default.StrictMode, null, headElement);
+    headElement = import_react4.default.createElement(import_react4.default.StrictMode, null, headElement);
   }
   return (0, import_server.renderToStaticMarkup)(headElement);
 }
@@ -11963,10 +11932,10 @@ async function getBodyHtmlBoundary(pageContext) {
   const bodyHtmlEnd = dangerouslySkipEscape((await callCumulativeHooks(pageContext.config.bodyHtmlEnd, pageContext)).join(""));
   return { bodyHtmlBegin, bodyHtmlEnd };
 }
-var import_react5, import_server, import_server2, onRenderHtml;
+var import_react4, import_server, import_server2, onRenderHtml;
 var init_onRenderHtml = __esm({
   "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/integration/onRenderHtml.js"() {
-    import_react5 = __toESM(require_react(), 1);
+    import_react4 = __toESM(require_react(), 1);
     import_server = __toESM(require_server_node(), 1);
     import_server2 = __toESM(require_index_node_and_web(), 1);
     init_runtime();
@@ -12036,45 +12005,29 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// dist/server/chunks/chunk-CZTyJyIM.js
-function Link({ href, children }) {
-  const pageContext = usePageContext();
-  const { urlPathname } = pageContext;
-  const isActive = href === "/" ? urlPathname === href : urlPathname.startsWith(href);
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { href, className: isActive ? "is-active" : void 0, children });
-}
-function LayoutDefault({ children }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex max-w-5xl m-auto", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sidebar, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, { href: "/", children: "Welcome" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, { href: "/todo", children: "Todo" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, { href: "/star-wars", children: "Data Fetching" }),
-      ""
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Content, { children })
+// dist/server/chunks/chunk-DMmkHspI.js
+function HeadDefault() {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", { rel: "icon", href: logoUrl }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", { rel: "preconnect", href: "https://fonts.googleapis.com" }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      "link",
+      {
+        href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap",
+        rel: "stylesheet"
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", { rel: "stylesheet", href: "/clash-grotesk.css" })
   ] });
 }
-function Sidebar({ children }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { id: "sidebar", className: "p-5 flex flex-col shrink-0 border-r-2 border-r-gray-200", children });
-}
-function Content({ children }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { id: "page-container", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { id: "page-content", className: "p-5 pb-12 min-h-screen", children }) });
-}
-function Logo() {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "p-5 mb-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { href: "/", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: logoUrl, height: 64, width: 64, alt: "logo" }) }) });
-}
-function HeadDefault() {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", { rel: "icon", href: logoUrl }) });
-}
-var import_jsx_runtime, logoUrl, import4;
-var init_chunk_CZTyJyIM = __esm({
-  "dist/server/chunks/chunk-CZTyJyIM.js"() {
+var import_jsx_runtime, logoUrl, import2;
+var init_chunk_DMmkHspI = __esm({
+  "dist/server/chunks/chunk-DMmkHspI.js"() {
     "use strict";
     import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-    init_usePageContext();
     logoUrl = "/assets/static/logo.DLJJsk-H.svg";
-    import4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    import2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
       __proto__: null,
       default: HeadDefault
     }, Symbol.toStringTag, { value: "Module" }));
@@ -12086,32 +12039,13 @@ var pages_error_exports = {};
 __export(pages_error_exports, {
   configValuesSerialized: () => configValuesSerialized
 });
-function Page() {
-  const { is404 } = usePageContext();
-  if (is404) {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h1", { children: "404 Page Not Found" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: "This page could not be found." })
-    ] });
-  }
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h1", { children: "500 Internal Server Error" }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: "Something went wrong." })
-  ] });
-}
-var import_jsx_runtime2, import5, configValuesSerialized;
+var import_jsx_runtime2, configValuesSerialized;
 var init_pages_error = __esm({
   "dist/server/entries/pages_error.mjs"() {
     "use strict";
-    init_Loading();
     init_onRenderHtml();
-    init_chunk_CZTyJyIM();
+    init_chunk_DMmkHspI();
     import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-    init_usePageContext();
-    import5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-      __proto__: null,
-      default: Page
-    }, Symbol.toStringTag, { value: "Module" }));
     configValuesSerialized = {
       ["isClientRuntimeLoaded"]: {
         type: "computed",
@@ -12121,14 +12055,6 @@ var init_pages_error = __esm({
           value: true
         }
       },
-      ["Loading"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "vike-react/__internal/components/Loading", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "pointer-import",
-          value: Loading_default
-        }
-      },
       ["onRenderHtml"]: {
         type: "standard",
         definedAtData: { "filePathToShowToUser": "vike-react/__internal/integration/onRenderHtml", "fileExportPathToShowToUser": [] },
@@ -12145,20 +12071,12 @@ var init_pages_error = __esm({
           value: ["_configFromHook"]
         }]
       },
-      ["Layout"]: {
-        type: "cumulative",
-        definedAtData: [{ "filePathToShowToUser": "/layouts/LayoutDefault.tsx", "fileExportPathToShowToUser": [] }],
-        valueSerialized: [{
-          type: "pointer-import",
-          value: LayoutDefault
-        }]
-      },
       ["Head"]: {
         type: "cumulative",
         definedAtData: [{ "filePathToShowToUser": "/pages/+Head.tsx", "fileExportPathToShowToUser": [] }],
         valueSerialized: [{
           type: "plus-file",
-          exportValues: import4
+          exportValues: import2
         }]
       },
       ["title"]: {
@@ -12176,66 +12094,23 @@ var init_pages_error = __esm({
           type: "js-serialized",
           value: "Demo showcasing Vike"
         }
-      },
-      ["Page"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/_error/+Page.tsx", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "plus-file",
-          exportValues: import5
-        }
       }
     };
   }
 });
 
-// dist/server/entries/pages_index.mjs
-var pages_index_exports = {};
-__export(pages_index_exports, {
+// dist/server/entries/pages_contact.mjs
+var pages_contact_exports = {};
+__export(pages_contact_exports, {
   configValuesSerialized: () => configValuesSerialized2
 });
-function Counter() {
-  const [count, setCount] = (0, import_react6.useState)(0);
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
-    "button",
-    {
-      type: "button",
-      className: "inline-block border border-black rounded bg-gray-200 px-2 py-1 text-xs font-medium uppercase leading-normal",
-      onClick: () => setCount((count2) => count2 + 1),
-      children: [
-        "Counter ",
-        count
-      ]
-    }
-  );
-}
-function Page2() {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h1", { className: "font-bold text-3xl pb-4", children: "My Vike app" }),
-    "This page is:",
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("li", { children: "Rendered to HTML." }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("li", { children: [
-        "Interactive. ",
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Counter, {})
-      ] })
-    ] })
-  ] });
-}
-var import_jsx_runtime3, import_react6, import52, configValuesSerialized2;
-var init_pages_index = __esm({
-  "dist/server/entries/pages_index.mjs"() {
+var import_jsx_runtime3, configValuesSerialized2;
+var init_pages_contact = __esm({
+  "dist/server/entries/pages_contact.mjs"() {
     "use strict";
-    init_Loading();
     init_onRenderHtml();
-    init_chunk_CZTyJyIM();
+    init_chunk_DMmkHspI();
     import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
-    import_react6 = __toESM(require_react(), 1);
-    init_usePageContext();
-    import52 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-      __proto__: null,
-      default: Page2
-    }, Symbol.toStringTag, { value: "Module" }));
     configValuesSerialized2 = {
       ["isClientRuntimeLoaded"]: {
         type: "computed",
@@ -12245,14 +12120,6 @@ var init_pages_index = __esm({
           value: true
         }
       },
-      ["Loading"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "vike-react/__internal/components/Loading", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "pointer-import",
-          value: Loading_default
-        }
-      },
       ["onRenderHtml"]: {
         type: "standard",
         definedAtData: { "filePathToShowToUser": "vike-react/__internal/integration/onRenderHtml", "fileExportPathToShowToUser": [] },
@@ -12269,20 +12136,12 @@ var init_pages_index = __esm({
           value: ["_configFromHook"]
         }]
       },
-      ["Layout"]: {
-        type: "cumulative",
-        definedAtData: [{ "filePathToShowToUser": "/layouts/LayoutDefault.tsx", "fileExportPathToShowToUser": [] }],
-        valueSerialized: [{
-          type: "pointer-import",
-          value: LayoutDefault
-        }]
-      },
       ["Head"]: {
         type: "cumulative",
         definedAtData: [{ "filePathToShowToUser": "/pages/+Head.tsx", "fileExportPathToShowToUser": [] }],
         valueSerialized: [{
           type: "plus-file",
-          exportValues: import4
+          exportValues: import2
         }]
       },
       ["title"]: {
@@ -12300,400 +12159,23 @@ var init_pages_index = __esm({
           type: "js-serialized",
           value: "Demo showcasing Vike"
         }
-      },
-      ["Page"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/index/+Page.tsx", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "plus-file",
-          exportValues: import52
-        }
       }
     };
   }
 });
 
-// node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/hooks/useData.js
-function useData() {
-  const data3 = usePageContext()?.data;
-  return data3;
-}
-var init_useData = __esm({
-  "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/hooks/useData.js"() {
-    init_usePageContext();
-  }
-});
-
-// node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/initData.js
-var require_initData = __commonJS({
-  "node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/initData.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.initDataHtmlClass = void 0;
-    var initDataHtmlClass = "react-streaming_initData";
-    exports.initDataHtmlClass = initDataHtmlClass;
-  }
-});
-
-// node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/utils.js
-var require_utils5 = __commonJS({
-  "node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/utils.js"(exports) {
-    "use strict";
-    var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-      if (k2 === void 0) k2 = k;
-      var desc = Object.getOwnPropertyDescriptor(m, k);
-      if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-        desc = { enumerable: true, get: function() {
-          return m[k];
-        } };
-      }
-      Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
-      if (k2 === void 0) k2 = k;
-      o[k2] = m[k];
-    });
-    var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-      for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p)) __createBinding(exports2, m, p);
-    };
-    Object.defineProperty(exports, "__esModule", { value: true });
-    __exportStar(require_assert2(), exports);
-    __exportStar(require_getGlobalObject(), exports);
-    __exportStar(require_isPromise(), exports);
-  }
-});
-
-// node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/useSuspense.js
-var require_useSuspense = __commonJS({
-  "node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/useSuspense.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.useSuspense = void 0;
-    var utils_1 = require_utils5();
-    var globalObject12 = (0, utils_1.getGlobalObject)("useSuspense.ts", {
-      workaroundCache: {}
-    });
-    var { workaroundCache } = globalObject12;
-    var DEBUG = false;
-    function useSuspense({ key, elementId, suspenses, resolver, resolverSync, needsWorkaround, asyncFnName }) {
-      DEBUG && console.log("=== useSuspense()");
-      const suspenseId = getSuspenseId(key, elementId);
-      DEBUG && console.log("key", key);
-      DEBUG && console.log("suspenseId", suspenseId);
-      let suspense = suspenses[suspenseId];
-      DEBUG && console.log("suspense", suspense);
-      if (!suspense && resolverSync) {
-        const resolved = resolverSync();
-        if (resolved) {
-          const { value } = resolved;
-          suspense = suspenses[suspenseId] = { state: "done", value };
-          DEBUG && console.log("resolverSync()", suspense);
-        }
-      }
-      if (!suspense && needsWorkaround) {
-        const found = workaroundCache[key];
-        if (found) {
-          suspense = found.suspense;
-          DEBUG && console.log("from workaroundCache", suspense);
-          if (suspense.state === "done") {
-            suspenses[suspenseId] = suspense;
-            if (found.cacheTimeout === null) {
-              found.cacheTimeout = setTimeout(
-                () => {
-                  found.cacheTimeout = null;
-                  delete workaroundCache[key];
-                },
-                // Too low => concurrent <Suspense> boundaries with the same key may re-trigger data fetching upon heavy & slow rendering.
-                // Too high => user navigating to another page and quickly going back will see cached data. (But we don't want our low-level `useAsync()` hook to be a cache: it should be higher-level wrapper hooks such as React Query that implement caching.)
-                1e3
-              );
-            }
-          }
-        }
-      }
-      {
-        const updateSuspenseAsync = (s) => {
-          suspense = s;
-          if (!needsWorkaround) {
-            suspenses[suspenseId] = suspense;
-            return;
-          }
-          {
-            const found = workaroundCache[key];
-            if (found === null || found === void 0 ? void 0 : found.cacheTimeout) {
-              clearTimeout(found.cacheTimeout);
-            }
-          }
-          workaroundCache[key] = {
-            suspense,
-            cacheTimeout: null
-          };
-        };
-        if (!suspense) {
-          let ret;
-          try {
-            ret = resolver();
-            DEBUG && console.log("resolver()");
-            if (!(0, utils_1.isPromise)(ret)) {
-              const fnName = asyncFnName || "fn";
-              (0, utils_1.assertWarning)(false, `[useAsync(key, ${fnName})] You provided a function \`${fnName}\` which didn't return a promise`, {
-                onlyOnce: true,
-                showStackTrace: true
-              });
-              suspense = suspenses[suspenseId] = { state: "done", value: ret };
-            } else {
-              const promise = ret.then((value) => {
-                updateSuspenseAsync({ state: "done", value });
-                DEBUG && console.log("=== resolver() done", suspense);
-              }).catch((err) => {
-                updateSuspenseAsync({ state: "error", err });
-                DEBUG && console.log("=== resolver() error", suspense);
-              });
-              updateSuspenseAsync({ state: "pending", promise });
-            }
-          } catch (err) {
-            updateSuspenseAsync({ state: "error", err });
-          }
-          (0, utils_1.assert)(suspense);
-        }
-      }
-      if (suspense.state === "pending") {
-        bugCatcher();
-        (0, utils_1.assert)((0, utils_1.isPromise)(suspense.promise));
-        throw suspense.promise;
-      }
-      if (suspense.state === "error") {
-        delete suspenses[suspenseId];
-        const { err } = suspense;
-        console.error(err);
-        throw err;
-      }
-      if (suspense.state === "done") {
-        return suspense.value;
-      }
-      (0, utils_1.assert)(false);
-    }
-    exports.useSuspense = useSuspense;
-    var count;
-    function bugCatcher() {
-      if (count === void 0) {
-        count = 0;
-        setTimeout(() => {
-          count = void 0;
-        }, 30 * 1e3);
-      }
-      if (++count > 1e3) {
-        throw new Error("Infinite loop detected. This possibly is a React bug. Reach out to the https://github.com/brillout/react-streaming maintainer.");
-      }
-    }
-    function getSuspenseId(key, elementId) {
-      (0, utils_1.assert)(!elementId.includes("_"));
-      return `${key}_${elementId}`;
-    }
-  }
-});
-
-// node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/key.js
-var require_key = __commonJS({
-  "node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/shared/key.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.assertKey = exports.stringifyKey = void 0;
-    var stringify_1 = require_stringify();
-    var isCallable_1 = require_isCallable2();
-    var utils_1 = require_utils5();
-    function stringifyKey(key) {
-      const keyString = (0, stringify_1.stringify)(key, { sortObjectKeys: true });
-      return keyString;
-    }
-    exports.stringifyKey = stringifyKey;
-    function assertKey(keyValue) {
-      (0, utils_1.assertUsage)(keyValue, `[useAsync(key, asyncFn)] You provided a \`key\` with the value \`${keyValue}\` which is forbidden.`);
-      (0, utils_1.assertUsage)(!(0, isCallable_1.isCallable)(keyValue), `[useAsync(key, asyncFn)] You provided a \`key\` that is a function which is forbidden.`);
-    }
-    exports.assertKey = assertKey;
-  }
-});
-
-// node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/server/useAsync.js
-var require_useAsync = __commonJS({
-  "node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/server/useAsync.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.useAsync = void 0;
-    var react_1 = require_react();
-    var useStream_1 = require_useStream();
-    var utils_1 = require_utils4();
-    var stringify_1 = require_stringify();
-    var initData_1 = require_initData();
-    var useSuspense_1 = require_useSuspense();
-    var key_1 = require_key();
-    var useSuspenseData_1 = require_useSuspenseData();
-    function useAsync(keyValue, asyncFn) {
-      (0, key_1.assertKey)(keyValue);
-      const key = (0, key_1.stringifyKey)(keyValue);
-      const elementId = (0, react_1.useId)();
-      const streamUtils = (0, useStream_1.useStream)();
-      (0, utils_1.assert)(streamUtils);
-      const resolver = async () => {
-        const value = await asyncFn();
-        provideInitData(streamUtils, { key, value, elementId });
-        return value;
-      };
-      const suspenses = (0, useSuspenseData_1.useSuspenseData)();
-      (0, utils_1.assert)(suspenses);
-      return (0, useSuspense_1.useSuspense)({ suspenses, resolver, key, elementId, asyncFnName: asyncFn.name });
-    }
-    exports.useAsync = useAsync;
-    function provideInitData(streamUtils, initData) {
-      const initDataSerialized = (0, stringify_1.stringify)(initData);
-      const initDataInjection = `<script class="${initData_1.initDataHtmlClass}" type="application/json">${initDataSerialized}</script>`;
-      streamUtils.injectToStream(initDataInjection);
-    }
-  }
-});
-
-// node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/server/hooks.js
-var require_hooks = __commonJS({
-  "node_modules/.pnpm/react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-streaming/dist/cjs/server/hooks.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.useStream = exports.useAsync = void 0;
-    var assert_1 = require_assert2();
-    var isBrowser_1 = require_isBrowser();
-    (0, assert_1.assertUsage)(!(0, isBrowser_1.isBrowser)(), "The file node_modules/react-streaming/dist/{esm,cjs}/server/hooks.js is loaded in the browser but it shouldn't. Make sure to never `import { something } from 'react-streaming/server'` in code that runs on the client-side. Also make sure your bundler picks the right node_modules/react-streaming/package.json#exports entries.");
-    var useAsync_1 = require_useAsync();
-    Object.defineProperty(exports, "useAsync", { enumerable: true, get: function() {
-      return useAsync_1.useAsync;
-    } });
-    var useStream_1 = require_useStream();
-    Object.defineProperty(exports, "useStream", { enumerable: true, get: function() {
-      return useStream_1.useStream;
-    } });
-  }
-});
-
-// node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/utils/objectKeys.js
-function objectKeys(obj) {
-  return Object.keys(obj);
-}
-var init_objectKeys2 = __esm({
-  "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/utils/objectKeys.js"() {
-  }
-});
-
-// node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/hooks/useConfig/useConfig-server.js
-function useConfig() {
-  let pageContext = getPageContext();
-  if (pageContext)
-    return (config) => setPageContextConfigFromHook(config, pageContext);
-  pageContext = usePageContext();
-  const stream = (0, import_react_streaming.useStream)();
-  return (config) => {
-    if (!pageContext._headAlreadySet) {
-      setPageContextConfigFromHook(config, pageContext);
-    } else {
-      apply(config, stream);
-    }
-  };
-}
-function setPageContextConfigFromHook(config, pageContext) {
-  pageContext._configFromHook ?? (pageContext._configFromHook = {});
-  objectKeys(config).forEach((configName) => {
-    var _a;
-    if (pageContext.isClientSideNavigation && !configsClientSide.includes(configName))
-      return;
-    if (!includes(configsCumulative, configName)) {
-      const configValue = config[configName];
-      if (configValue === void 0)
-        return;
-      pageContext._configFromHook[configName] = configValue;
-    } else {
-      const configValue = config[configName];
-      if (!configValue)
-        return;
-      (_a = pageContext._configFromHook)[configName] ?? (_a[configName] = []);
-      pageContext._configFromHook[configName].push(configValue);
-    }
-  });
-}
-function apply(config, stream) {
-  const { title } = config;
-  if (title) {
-    const htmlSnippet = `<script>document.title = ${JSON.stringify(title)}</script>`;
-    stream.injectToStream(htmlSnippet);
-  }
-}
-var import_react_streaming, configsClientSide;
-var init_useConfig_server = __esm({
-  "node_modules/.pnpm/vike-react@0.5.7_react-dom@18.3.1_react@18.3.1__react@18.3.1_vike@0.4.201_react-streaming@0.3_f2anntmdaknj64vg2dca55qh4y/node_modules/vike-react/dist/hooks/useConfig/useConfig-server.js"() {
-    init_usePageContext();
-    init_getPageContext();
-    import_react_streaming = __toESM(require_hooks(), 1);
-    init_objectKeys2();
-    init_includes();
-    init_configsCumulative();
-    configsClientSide = ["title"];
-  }
-});
-
-// dist/server/entries/pages_star-wars_index.mjs
-var pages_star_wars_index_exports = {};
-__export(pages_star_wars_index_exports, {
+// dist/server/entries/pages_index.mjs
+var pages_index_exports = {};
+__export(pages_index_exports, {
   configValuesSerialized: () => configValuesSerialized3
 });
-function Page3() {
-  const movies = useData();
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h1", { children: "Star Wars Movies" }),
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("ol", { children: movies.map(({ id, title, release_date }) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("li", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", { href: `/star-wars/${id}`, children: title }),
-      " (",
-      release_date,
-      ")"
-    ] }, id)) }),
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", { children: [
-      "Source: ",
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", { href: "https://brillout.github.io/star-wars", children: "brillout.github.io/star-wars" }),
-      "."
-    ] })
-  ] });
-}
-function minimize(movies) {
-  return movies.map((movie) => {
-    const { title, release_date, id } = movie;
-    return { title, release_date, id };
-  });
-}
-var import_jsx_runtime4, import53, data, import6, configValuesSerialized3;
-var init_pages_star_wars_index = __esm({
-  "dist/server/entries/pages_star-wars_index.mjs"() {
+var import_jsx_runtime4, configValuesSerialized3;
+var init_pages_index = __esm({
+  "dist/server/entries/pages_index.mjs"() {
     "use strict";
-    init_Loading();
     init_onRenderHtml();
-    init_chunk_CZTyJyIM();
+    init_chunk_DMmkHspI();
     import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
-    init_useData();
-    init_useConfig_server();
-    init_usePageContext();
-    import53 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-      __proto__: null,
-      default: Page3
-    }, Symbol.toStringTag, { value: "Module" }));
-    data = async () => {
-      const config = useConfig();
-      const response = await fetch("https://brillout.github.io/star-wars/api/films.json");
-      const moviesData = await response.json();
-      config({
-        // Set <title>
-        title: `${moviesData.length} Star Wars Movies`
-      });
-      const movies = minimize(moviesData);
-      return movies;
-    };
-    import6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-      __proto__: null,
-      data
-    }, Symbol.toStringTag, { value: "Module" }));
     configValuesSerialized3 = {
       ["isClientRuntimeLoaded"]: {
         type: "computed",
@@ -12703,14 +12185,6 @@ var init_pages_star_wars_index = __esm({
           value: true
         }
       },
-      ["Loading"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "vike-react/__internal/components/Loading", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "pointer-import",
-          value: Loading_default
-        }
-      },
       ["onRenderHtml"]: {
         type: "standard",
         definedAtData: { "filePathToShowToUser": "vike-react/__internal/integration/onRenderHtml", "fileExportPathToShowToUser": [] },
@@ -12727,20 +12201,12 @@ var init_pages_star_wars_index = __esm({
           value: ["_configFromHook"]
         }]
       },
-      ["Layout"]: {
-        type: "cumulative",
-        definedAtData: [{ "filePathToShowToUser": "/layouts/LayoutDefault.tsx", "fileExportPathToShowToUser": [] }],
-        valueSerialized: [{
-          type: "pointer-import",
-          value: LayoutDefault
-        }]
-      },
       ["Head"]: {
         type: "cumulative",
         definedAtData: [{ "filePathToShowToUser": "/pages/+Head.tsx", "fileExportPathToShowToUser": [] }],
         valueSerialized: [{
           type: "plus-file",
-          exportValues: import4
+          exportValues: import2
         }]
       },
       ["title"]: {
@@ -12757,172 +12223,6 @@ var init_pages_star_wars_index = __esm({
         valueSerialized: {
           type: "js-serialized",
           value: "Demo showcasing Vike"
-        }
-      },
-      ["Page"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/star-wars/index/+Page.tsx", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "plus-file",
-          exportValues: import53
-        }
-      },
-      ["data"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/star-wars/index/+data.ts", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "plus-file",
-          exportValues: import6
-        }
-      }
-    };
-  }
-});
-
-// dist/server/entries/pages_todo.mjs
-var pages_todo_exports = {};
-__export(pages_todo_exports, {
-  configValuesSerialized: () => configValuesSerialized4
-});
-function TodoList({ initialTodoItems }) {
-  const [todoItems, setTodoItems] = (0, import_react7.useState)(initialTodoItems);
-  const [newTodo, setNewTodo] = (0, import_react7.useState)("");
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { children: todoItems.map((todoItem, index) => (
-      // biome-ignore lint:
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { children: todoItem.text }, index)
-    )) }),
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
-      "form",
-      {
-        onSubmit: async (ev) => {
-          ev.preventDefault();
-          setTodoItems((prev) => [...prev, { text: newTodo }]);
-        },
-        children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("input", { type: "text", onChange: (ev) => setNewTodo(ev.target.value), value: newTodo }),
-          " ",
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { type: "submit", children: "Add to-do" })
-        ]
-      }
-    ) })
-  ] });
-}
-function Page4() {
-  const data22 = useData();
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h1", { children: "To-do List" }),
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TodoList, { initialTodoItems: data22.todo })
-  ] });
-}
-async function data2(_pageContext) {
-  return { todo: todos };
-}
-var import_jsx_runtime5, import_react7, import54, todosDefault, database, todos, import62, configValuesSerialized4;
-var init_pages_todo = __esm({
-  "dist/server/entries/pages_todo.mjs"() {
-    "use strict";
-    init_Loading();
-    init_onRenderHtml();
-    init_chunk_CZTyJyIM();
-    import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
-    init_useData();
-    import_react7 = __toESM(require_react(), 1);
-    init_usePageContext();
-    import54 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-      __proto__: null,
-      default: Page4
-    }, Symbol.toStringTag, { value: "Module" }));
-    todosDefault = [{ text: "Buy milk" }, { text: "Buy strawberries" }];
-    database = // We create an in-memory database.
-    // - We use globalThis so that the database isn't reset upon HMR.
-    // - The database is reset when restarting the server, use a proper database (SQLite/PostgreSQL/...) if you want persistent data.
-    // biome-ignore lint:
-    globalThis.__database ?? (globalThis.__database = { todos: todosDefault });
-    ({ todos } = database);
-    import62 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-      __proto__: null,
-      default: data2
-    }, Symbol.toStringTag, { value: "Module" }));
-    configValuesSerialized4 = {
-      ["isClientRuntimeLoaded"]: {
-        type: "computed",
-        definedAtData: null,
-        valueSerialized: {
-          type: "js-serialized",
-          value: true
-        }
-      },
-      ["Loading"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "vike-react/__internal/components/Loading", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "pointer-import",
-          value: Loading_default
-        }
-      },
-      ["onRenderHtml"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "vike-react/__internal/integration/onRenderHtml", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "pointer-import",
-          value: onRenderHtml
-        }
-      },
-      ["passToClient"]: {
-        type: "cumulative",
-        definedAtData: [{ "filePathToShowToUser": "vike-react/config", "fileExportPathToShowToUser": ["default", "passToClient"] }],
-        valueSerialized: [{
-          type: "js-serialized",
-          value: ["_configFromHook"]
-        }]
-      },
-      ["Layout"]: {
-        type: "cumulative",
-        definedAtData: [{ "filePathToShowToUser": "/layouts/LayoutDefault.tsx", "fileExportPathToShowToUser": [] }],
-        valueSerialized: [{
-          type: "pointer-import",
-          value: LayoutDefault
-        }]
-      },
-      ["Head"]: {
-        type: "cumulative",
-        definedAtData: [{ "filePathToShowToUser": "/pages/+Head.tsx", "fileExportPathToShowToUser": [] }],
-        valueSerialized: [{
-          type: "plus-file",
-          exportValues: import4
-        }]
-      },
-      ["title"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "title"] },
-        valueSerialized: {
-          type: "js-serialized",
-          value: "My Vike App"
-        }
-      },
-      ["description"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "description"] },
-        valueSerialized: {
-          type: "js-serialized",
-          value: "Demo showcasing Vike"
-        }
-      },
-      ["Page"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/todo/+Page.tsx", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "plus-file",
-          exportValues: import54
-        }
-      },
-      ["data"]: {
-        type: "standard",
-        definedAtData: { "filePathToShowToUser": "/pages/todo/+data.ts", "fileExportPathToShowToUser": [] },
-        valueSerialized: {
-          type: "plus-file",
-          exportValues: import62
         }
       }
     };
@@ -12968,58 +12268,34 @@ var init_entry = __esm({
         }
       },
       {
+        pageId: "/pages/contact",
+        isErrorPage: void 0,
+        routeFilesystem: { "routeString": "/contact", "definedBy": "/pages/contact/" },
+        loadConfigValuesAll: () => Promise.resolve().then(() => (init_pages_contact(), pages_contact_exports)),
+        configValuesSerialized: {
+          ["isClientRuntimeLoaded"]: {
+            type: "computed",
+            definedAtData: null,
+            valueSerialized: {
+              type: "js-serialized",
+              value: true
+            }
+          },
+          ["clientRouting"]: {
+            type: "standard",
+            definedAtData: { "filePathToShowToUser": "vike-react/config", "fileExportPathToShowToUser": ["default", "clientRouting"] },
+            valueSerialized: {
+              type: "js-serialized",
+              value: true
+            }
+          }
+        }
+      },
+      {
         pageId: "/pages/index",
         isErrorPage: void 0,
         routeFilesystem: { "routeString": "/", "definedBy": "/pages/index/" },
         loadConfigValuesAll: () => Promise.resolve().then(() => (init_pages_index(), pages_index_exports)),
-        configValuesSerialized: {
-          ["isClientRuntimeLoaded"]: {
-            type: "computed",
-            definedAtData: null,
-            valueSerialized: {
-              type: "js-serialized",
-              value: true
-            }
-          },
-          ["clientRouting"]: {
-            type: "standard",
-            definedAtData: { "filePathToShowToUser": "vike-react/config", "fileExportPathToShowToUser": ["default", "clientRouting"] },
-            valueSerialized: {
-              type: "js-serialized",
-              value: true
-            }
-          }
-        }
-      },
-      {
-        pageId: "/pages/star-wars/index",
-        isErrorPage: void 0,
-        routeFilesystem: { "routeString": "/star-wars", "definedBy": "/pages/star-wars/index/" },
-        loadConfigValuesAll: () => Promise.resolve().then(() => (init_pages_star_wars_index(), pages_star_wars_index_exports)),
-        configValuesSerialized: {
-          ["isClientRuntimeLoaded"]: {
-            type: "computed",
-            definedAtData: null,
-            valueSerialized: {
-              type: "js-serialized",
-              value: true
-            }
-          },
-          ["clientRouting"]: {
-            type: "standard",
-            definedAtData: { "filePathToShowToUser": "vike-react/config", "fileExportPathToShowToUser": ["default", "clientRouting"] },
-            valueSerialized: {
-              type: "js-serialized",
-              value: true
-            }
-          }
-        }
-      },
-      {
-        pageId: "/pages/todo",
-        isErrorPage: void 0,
-        routeFilesystem: { "routeString": "/todo", "definedBy": "/pages/todo/" },
-        loadConfigValuesAll: () => Promise.resolve().then(() => (init_pages_todo(), pages_todo_exports)),
         configValuesSerialized: {
           ["isClientRuntimeLoaded"]: {
             type: "computed",
@@ -13074,50 +12350,130 @@ var init_entry = __esm({
     }, Symbol.toStringTag, { value: "Module" }));
     {
       const assetsManifest = {
+        "_chunk-!~{005}~.js": {
+          "file": "assets/static/components_fonts_clash-grotesk-f2a071a1.BL7EDyeZ.css",
+          "src": "_chunk-!~{005}~.js"
+        },
         "_chunk-!~{006}~.js": {
-          "file": "assets/static/layouts_style-b34a8e57.a91n6qlS.css",
+          "file": "assets/static/components_layout_tailwind-fa147b49.DfJYV9b2.css",
           "src": "_chunk-!~{006}~.js"
         },
         "_chunk-!~{007}~.js": {
-          "file": "assets/static/layouts_tailwind-00e65532.CgfpYGvB.css",
+          "file": "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
           "src": "_chunk-!~{007}~.js"
         },
-        "_chunk-!~{008}~.js": {
-          "file": "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
-          "src": "_chunk-!~{008}~.js"
+        "_chunk-C0I7GEV1.js": {
+          "file": "assets/chunks/chunk-C0I7GEV1.js",
+          "name": "acedia guide (1)-18",
+          "imports": [
+            "_chunk-CyteW4MI.js"
+          ],
+          "assets": [
+            "assets/static/acedia-guide--1--14.2jaLjncJ.svg",
+            "assets/static/in-progress-1.mExKccGA.png",
+            "assets/static/acedia-guide--1--18.CZuwPWNI.svg"
+          ]
         },
-        "_chunk-36tkBo-o.js": {
-          "file": "assets/chunks/chunk-36tkBo-o.js",
+        "_chunk-CyteW4MI.js": {
+          "file": "assets/chunks/chunk-CyteW4MI.js",
           "name": "_onPageTransitionStart",
           "imports": [
             "_chunk-D6lHprcd.js"
           ],
           "css": [
             "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
-            "assets/static/layouts_style-b34a8e57.a91n6qlS.css",
-            "assets/static/layouts_tailwind-00e65532.CgfpYGvB.css"
+            "assets/static/components_layout_tailwind-fa147b49.DfJYV9b2.css",
+            "assets/static/components_fonts_clash-grotesk-f2a071a1.BL7EDyeZ.css"
           ],
           "assets": [
-            "assets/static/logo.DLJJsk-H.svg"
+            "assets/static/acedia-06.-3aQICG4.svg",
+            "assets/static/ClashGrotesk-Variable.BS-lg9W7.woff2",
+            "assets/static/ClashGrotesk-Variable.lreXlFCG.woff",
+            "assets/static/ClashGrotesk-Variable.Cp-iDUFA.ttf"
           ]
         },
         "_chunk-D6lHprcd.js": {
           "file": "assets/chunks/chunk-D6lHprcd.js",
           "name": "executeHook"
         },
-        "_chunk-DtOXHzXr.js": {
-          "file": "assets/chunks/chunk-DtOXHzXr.js",
-          "name": "useData",
-          "imports": [
-            "_chunk-36tkBo-o.js"
-          ]
+        "assets/acedia guide (1)-14-services.png": {
+          "file": "assets/static/acedia-guide--1--14-services.BSQPERZW.png",
+          "src": "assets/acedia guide (1)-14-services.png"
         },
-        "assets/logo.svg": {
-          "file": "assets/static/logo.DLJJsk-H.svg",
-          "src": "assets/logo.svg"
+        "assets/acedia guide (1)-14.png": {
+          "file": "assets/static/acedia-guide--1--14.Chhurg_K.png",
+          "src": "assets/acedia guide (1)-14.png"
+        },
+        "assets/acedia guide (1)-14.svg": {
+          "file": "assets/static/acedia-guide--1--14.2jaLjncJ.svg",
+          "src": "assets/acedia guide (1)-14.svg"
+        },
+        "assets/acedia guide (1)-18.svg": {
+          "file": "assets/static/acedia-guide--1--18.CZuwPWNI.svg",
+          "src": "assets/acedia guide (1)-18.svg"
+        },
+        "assets/acedia-06.svg": {
+          "file": "assets/static/acedia-06.-3aQICG4.svg",
+          "src": "assets/acedia-06.svg"
+        },
+        "assets/acedia-art-1.svg": {
+          "file": "assets/static/acedia-art-1.BeNYTIdj.svg",
+          "src": "assets/acedia-art-1.svg"
+        },
+        "assets/acedia-woman.svg": {
+          "file": "assets/static/acedia-woman.B6-3ZNO8.svg",
+          "src": "assets/acedia-woman.svg"
+        },
+        "assets/collage-1.png": {
+          "file": "assets/static/collage-1.BWwpVSin.png",
+          "src": "assets/collage-1.png"
+        },
+        "assets/gun2-1.jpg": {
+          "file": "assets/static/gun2-1.gOOWK-Hm.jpg",
+          "src": "assets/gun2-1.jpg"
+        },
+        "assets/home-header.png": {
+          "file": "assets/static/home-header.80_46NWh.png",
+          "src": "assets/home-header.png"
+        },
+        "assets/in-progress-1.png": {
+          "file": "assets/static/in-progress-1.mExKccGA.png",
+          "src": "assets/in-progress-1.png"
+        },
+        "assets/model-f.png": {
+          "file": "assets/static/model-f.D8zHacIk.png",
+          "src": "assets/model-f.png"
+        },
+        "assets/pressA-1.png": {
+          "file": "assets/static/pressA-1.rqMvJG9o.png",
+          "src": "assets/pressA-1.png"
+        },
+        "assets/service-image.jpg": {
+          "file": "assets/static/service-image.ZzChlzOl.jpg",
+          "src": "assets/service-image.jpg"
+        },
+        "assets/services-grid.png": {
+          "file": "assets/static/services-grid.p4R5CErE.png",
+          "src": "assets/services-grid.png"
+        },
+        "assets/twitter-banner-1.png": {
+          "file": "assets/static/twitter-banner-1.B-Gy_d1W.png",
+          "src": "assets/twitter-banner-1.png"
+        },
+        "components/fonts/ClashGrotesk-Variable.ttf": {
+          "file": "assets/static/ClashGrotesk-Variable.Cp-iDUFA.ttf",
+          "src": "components/fonts/ClashGrotesk-Variable.ttf"
+        },
+        "components/fonts/ClashGrotesk-Variable.woff": {
+          "file": "assets/static/ClashGrotesk-Variable.lreXlFCG.woff",
+          "src": "components/fonts/ClashGrotesk-Variable.woff"
+        },
+        "components/fonts/ClashGrotesk-Variable.woff2": {
+          "file": "assets/static/ClashGrotesk-Variable.BS-lg9W7.woff2",
+          "src": "components/fonts/ClashGrotesk-Variable.woff2"
         },
         "node_modules/.pnpm/vike@0.4.201_react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1__vite@5.4.11/node_modules/vike/dist/esm/client/client-routing-runtime/entry.js": {
-          "file": "assets/entries/entry-client-routing.DW1Pao6a.js",
+          "file": "assets/entries/entry-client-routing.BlcThnKc.js",
           "name": "entries/entry-client-routing",
           "src": "node_modules/.pnpm/vike@0.4.201_react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1__vite@5.4.11/node_modules/vike/dist/esm/client/client-routing-runtime/entry.js",
           "isEntry": true,
@@ -13126,75 +12482,88 @@ var init_entry = __esm({
           ],
           "dynamicImports": [
             "virtual:vike:pageConfigValuesAll:client:/pages/_error",
-            "virtual:vike:pageConfigValuesAll:client:/pages/index",
-            "virtual:vike:pageConfigValuesAll:client:/pages/star-wars/index",
-            "virtual:vike:pageConfigValuesAll:client:/pages/todo"
+            "virtual:vike:pageConfigValuesAll:client:/pages/contact",
+            "virtual:vike:pageConfigValuesAll:client:/pages/index"
           ]
         },
         "virtual:vike:pageConfigValuesAll:client:/pages/_error": {
-          "file": "assets/entries/pages_error.DCP-9-Cu.js",
+          "file": "assets/entries/pages_error.CBHZYqzl.js",
           "name": "entries/pages/_error",
           "src": "virtual:vike:pageConfigValuesAll:client:/pages/_error",
           "isEntry": true,
           "isDynamicEntry": true,
           "imports": [
-            "_chunk-36tkBo-o.js",
+            "_chunk-CyteW4MI.js",
             "_chunk-D6lHprcd.js"
           ],
           "css": [
             "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
-            "assets/static/layouts_style-b34a8e57.a91n6qlS.css",
-            "assets/static/layouts_tailwind-00e65532.CgfpYGvB.css"
+            "assets/static/components_layout_tailwind-fa147b49.DfJYV9b2.css",
+            "assets/static/components_fonts_clash-grotesk-f2a071a1.BL7EDyeZ.css"
+          ],
+          "assets": [
+            "assets/static/ClashGrotesk-Variable.BS-lg9W7.woff2",
+            "assets/static/ClashGrotesk-Variable.lreXlFCG.woff",
+            "assets/static/ClashGrotesk-Variable.Cp-iDUFA.ttf",
+            "assets/static/logo.DLJJsk-H.svg"
+          ]
+        },
+        "virtual:vike:pageConfigValuesAll:client:/pages/contact": {
+          "file": "assets/entries/pages_contact.4ocBRaSv.js",
+          "name": "entries/pages/contact",
+          "src": "virtual:vike:pageConfigValuesAll:client:/pages/contact",
+          "isEntry": true,
+          "isDynamicEntry": true,
+          "imports": [
+            "_chunk-CyteW4MI.js",
+            "_chunk-C0I7GEV1.js",
+            "_chunk-D6lHprcd.js"
+          ],
+          "css": [
+            "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
+            "assets/static/components_layout_tailwind-fa147b49.DfJYV9b2.css",
+            "assets/static/components_fonts_clash-grotesk-f2a071a1.BL7EDyeZ.css"
+          ],
+          "assets": [
+            "assets/static/acedia-art-1.BeNYTIdj.svg",
+            "assets/static/acedia-woman.B6-3ZNO8.svg",
+            "assets/static/ClashGrotesk-Variable.BS-lg9W7.woff2",
+            "assets/static/ClashGrotesk-Variable.lreXlFCG.woff",
+            "assets/static/ClashGrotesk-Variable.Cp-iDUFA.ttf",
+            "assets/static/logo.DLJJsk-H.svg"
           ]
         },
         "virtual:vike:pageConfigValuesAll:client:/pages/index": {
-          "file": "assets/entries/pages_index.DmMydqpc.js",
+          "file": "assets/entries/pages_index.CbBgtv3R.js",
           "name": "entries/pages/index",
           "src": "virtual:vike:pageConfigValuesAll:client:/pages/index",
           "isEntry": true,
           "isDynamicEntry": true,
           "imports": [
-            "_chunk-36tkBo-o.js",
+            "_chunk-CyteW4MI.js",
+            "_chunk-C0I7GEV1.js",
             "_chunk-D6lHprcd.js"
           ],
           "css": [
             "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
-            "assets/static/layouts_style-b34a8e57.a91n6qlS.css",
-            "assets/static/layouts_tailwind-00e65532.CgfpYGvB.css"
-          ]
-        },
-        "virtual:vike:pageConfigValuesAll:client:/pages/star-wars/index": {
-          "file": "assets/entries/pages_star-wars_index.MD5i9gTc.js",
-          "name": "entries/pages/star-wars/index",
-          "src": "virtual:vike:pageConfigValuesAll:client:/pages/star-wars/index",
-          "isEntry": true,
-          "isDynamicEntry": true,
-          "imports": [
-            "_chunk-36tkBo-o.js",
-            "_chunk-DtOXHzXr.js",
-            "_chunk-D6lHprcd.js"
+            "assets/static/components_layout_tailwind-fa147b49.DfJYV9b2.css",
+            "assets/static/components_fonts_clash-grotesk-f2a071a1.BL7EDyeZ.css"
           ],
-          "css": [
-            "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
-            "assets/static/layouts_style-b34a8e57.a91n6qlS.css",
-            "assets/static/layouts_tailwind-00e65532.CgfpYGvB.css"
-          ]
-        },
-        "virtual:vike:pageConfigValuesAll:client:/pages/todo": {
-          "file": "assets/entries/pages_todo.BSFWV1lQ.js",
-          "name": "entries/pages/todo",
-          "src": "virtual:vike:pageConfigValuesAll:client:/pages/todo",
-          "isEntry": true,
-          "isDynamicEntry": true,
-          "imports": [
-            "_chunk-36tkBo-o.js",
-            "_chunk-DtOXHzXr.js",
-            "_chunk-D6lHprcd.js"
-          ],
-          "css": [
-            "assets/static/vike-react-c9f70125.BcWtY8Ol.css",
-            "assets/static/layouts_style-b34a8e57.a91n6qlS.css",
-            "assets/static/layouts_tailwind-00e65532.CgfpYGvB.css"
+          "assets": [
+            "assets/static/acedia-guide--1--14-services.BSQPERZW.png",
+            "assets/static/acedia-guide--1--14.Chhurg_K.png",
+            "assets/static/collage-1.BWwpVSin.png",
+            "assets/static/gun2-1.gOOWK-Hm.jpg",
+            "assets/static/home-header.80_46NWh.png",
+            "assets/static/model-f.D8zHacIk.png",
+            "assets/static/pressA-1.rqMvJG9o.png",
+            "assets/static/service-image.ZzChlzOl.jpg",
+            "assets/static/services-grid.p4R5CErE.png",
+            "assets/static/twitter-banner-1.B-Gy_d1W.png",
+            "assets/static/ClashGrotesk-Variable.BS-lg9W7.woff2",
+            "assets/static/ClashGrotesk-Variable.lreXlFCG.woff",
+            "assets/static/ClashGrotesk-Variable.Cp-iDUFA.ttf",
+            "assets/static/logo.DLJJsk-H.svg"
           ]
         }
       };
@@ -13579,8 +12948,8 @@ var init_assertPlusFileExport = __esm({
 });
 
 // node_modules/.pnpm/vike@0.4.201_react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1__vite@5.4.11/node_modules/vike/dist/esm/shared/page-configs/serialize/parsePageConfigs.js
-function parseConfigValuesSerialized(configValuesSerialized5) {
-  const configValues = parseConfigValuesSerialized_tmp(configValuesSerialized5);
+function parseConfigValuesSerialized(configValuesSerialized4) {
+  const configValues = parseConfigValuesSerialized_tmp(configValuesSerialized4);
   return configValues;
 }
 function parsePageConfigs(pageConfigsSerialized2, pageConfigGlobalSerialized2) {
@@ -13614,9 +12983,9 @@ function assertRouteConfigValue(configValues) {
   const configDefinedAt = getConfigDefinedAt("Config", configName, definedAtData);
   assertUsage2(configValueType === "string" || isCallable(value), `${configDefinedAt} has an invalid type '${configValueType}': it should be a string or a function instead, see https://vike.dev/route`);
 }
-function parseConfigValuesSerialized_tmp(configValuesSerialized5) {
+function parseConfigValuesSerialized_tmp(configValuesSerialized4) {
   const configValues = {};
-  Object.entries(configValuesSerialized5).forEach(([configName, configValueSeriliazed]) => {
+  Object.entries(configValuesSerialized4).forEach(([configName, configValueSeriliazed]) => {
     let configValue;
     if (configValueSeriliazed.type === "cumulative") {
       const { valueSerialized, ...common } = configValueSeriliazed;
@@ -20736,7 +20105,7 @@ var require_formats = __commonJS({
 });
 
 // node_modules/.pnpm/qs@6.13.0/node_modules/qs/lib/utils.js
-var require_utils6 = __commonJS({
+var require_utils5 = __commonJS({
   "node_modules/.pnpm/qs@6.13.0/node_modules/qs/lib/utils.js"(exports, module) {
     "use strict";
     var formats = require_formats();
@@ -20945,7 +20314,7 @@ var require_stringify2 = __commonJS({
   "node_modules/.pnpm/qs@6.13.0/node_modules/qs/lib/stringify.js"(exports, module) {
     "use strict";
     var getSideChannel = require_side_channel();
-    var utils = require_utils6();
+    var utils = require_utils5();
     var formats = require_formats();
     var has = Object.prototype.hasOwnProperty;
     var arrayPrefixGenerators = {
@@ -21224,7 +20593,7 @@ var require_stringify2 = __commonJS({
 var require_parse2 = __commonJS({
   "node_modules/.pnpm/qs@6.13.0/node_modules/qs/lib/parse.js"(exports, module) {
     "use strict";
-    var utils = require_utils6();
+    var utils = require_utils5();
     var has = Object.prototype.hasOwnProperty;
     var isArray2 = Array.isArray;
     var defaults = {

@@ -28,11 +28,11 @@
     "404.html": {
       "path": "404"
     },
+    "contact/index.html": {
+      "path": "contact"
+    },
     "index.html": {
       "path": ""
-    },
-    "star-wars/index.html": {
-      "path": "star-wars"
     }
   }
 }
