@@ -8,6 +8,12 @@ export default {
         sans: ["Inter"],
         serif: ["ClashGrotesk"],
       },
+      colors: {
+        lime: {
+          primary: "#A2FF00",
+          secondary: "#CBFF72",
+        },
+      },
     },
   },
   plugins: [],

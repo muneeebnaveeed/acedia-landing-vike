@@ -21,7 +21,7 @@ export const SocialLinks: FC = () => {
       {links.map((e, index) => (
         <li key={`${e.href}-${index}`}>
           <a rel="noreferrer" href={e.href} target="_blank" className="group">
-            <e.icon className="text-[#A2FF00] transition-colors group-hover:text-[#8ad900]" />
+            <e.icon className="text-lime-primary transition-colors group-hover:text-[#8ad900]" />
           </a>
         </li>
       ))}

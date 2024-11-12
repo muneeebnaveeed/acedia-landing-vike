@@ -20,7 +20,7 @@ export const MobileNavbar: FC<{ onClose: DispatchWithoutAction }> = ({ onClose }
               <a
                 href={e.href}
                 className={cn("font-serif text-[30px] leading-[29px] tracking-[0px] text-[#6C7361] no-underline", {
-                  "font-bold text-[#A2FF00]": isSelected,
+                  "font-bold text-lime-primary": isSelected,
                 })}
               >
                 {e.label}

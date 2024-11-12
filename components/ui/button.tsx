@@ -13,7 +13,7 @@ export const Button: FC<{
       type={type}
       className={cn(
         "font-regular flex items-center rounded-full font-serif transition-colors",
-        { "bg-[#A2FF00] hover:bg-[#8ad900] text-black": variant === "lime" },
+        { "bg-lime-primary hover:bg-[#8ad900] text-black": variant === "lime" },
         {
           "bg-[#4813D8] hover:bg-[#3d10b8] text-white": variant === "blue",
         },
