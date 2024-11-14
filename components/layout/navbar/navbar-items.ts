@@ -9,15 +9,11 @@ export const NavbarItems = [
   },
   {
     label: "Our Work",
-    href: "/#games",
+    href: "/#work",
   },
   {
     label: "Services",
     href: "/#services",
-  },
-  {
-    label: "Portfolio",
-    href: "/#portfolio",
   },
   {
     label: "Get in Touch",

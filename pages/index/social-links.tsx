@@ -7,12 +7,12 @@ import { XSocialIcon } from "../../components/icons/social/x-social";
 import { EmailIcon } from "../../components/icons/social/email";
 
 const links = [
-  { href: "", icon: InstagramIcon },
-  { href: "", icon: LinkedInIcon },
-  { href: "", icon: YoutubeIcon },
-  { href: "", icon: TiktokIcon },
-  { href: "", icon: XSocialIcon },
-  { href: "", icon: EmailIcon },
+  { href: "instagram.com/acediadevs", icon: InstagramIcon },
+  { href: "linkedin.com/company/acediadevs", icon: LinkedInIcon },
+  { href: "youtube.com/@acediadevs", icon: YoutubeIcon },
+  { href: "tiktok.com/@acediadevs", icon: TiktokIcon },
+  { href: "x.com/acediadevs", icon: XSocialIcon },
+  { href: "mailto:contact@acediadevs.com", icon: EmailIcon },
 ] as const;
 
 export const SocialLinks: FC = () => {

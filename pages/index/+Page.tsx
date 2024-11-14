@@ -70,7 +70,7 @@ export default function Page() {
             className="absolute -right-20 top-0 -z-10 translate-y-[-150px] rotate-[-17deg]"
           />
           <h2
-            id="our-work"
+            id="work"
             className="font-serif text-3xl  md:text-[60px] text-center md:text-left font-semibold uppercase leading-[88px] text-lime-primary underline underline-offset-8"
           >
             Our Work
