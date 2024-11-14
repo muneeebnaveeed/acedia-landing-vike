@@ -1,4 +1,4 @@
-import AcediaGuide14ServicesImage from "../../assets/acedia guide (1)-14-services.png";
+import AcediaGuide14ServicesImage from "../../assets/acedia-guide-(1)-14-services.png";
 import AcediaGuide114Iamge from "../../assets/acedia guide (1)-14.png";
 import AcediaGuide14Image from "../../assets/acedia guide (1)-14.svg";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
