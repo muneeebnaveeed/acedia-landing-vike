@@ -1,9 +1,8 @@
 import { FC, ReactNode } from "react";
-import AcediaArt14Image from "../../assets/acedia guide (1)-14.svg";
 import AcediaArt1Image from "../../assets/acedia-art-1.svg";
 import AcediaWomanImage from "../../assets/acedia-woman.svg";
 import { LetsBuildSomethingTogether } from "../../components/lets-build-something-together";
-import AcediaGuide14Image from "../../assets/acedia guide (1)-14.svg";
+import AcediaGuide14Image from "../../assets/acedia-guide-(1)-14-services.png";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 import { cn } from "../../lib/cn";
 
@@ -74,7 +73,7 @@ const ContactPage: FC = () => {
       </div>
 
       <div className="relative bg-transparent sm:bg-[#161616] overflow-hidden">
-        <img src={AcediaArt14Image} alt="" className="sm:hidden absolute left-1/2 bottom-0 rotate-[130deg]" />
+        <img src={AcediaGuide14Image} alt="" className="sm:hidden absolute left-1/2 bottom-0 rotate-[130deg]" />
 
         <img src={AcediaGuide14Image} className="hidden sm:inline absolute right-0 top-0" height={380} width={830} />
         <img src={AcediaGuide18Image} className="hidden sm:inline absolute left-0 -top-1/2" height={630} width={730} />

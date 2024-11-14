@@ -12084,7 +12084,7 @@ var init_pages_error = __esm({
         definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "title"] },
         valueSerialized: {
           type: "js-serialized",
-          value: "My Vike App"
+          value: "Acedia Devs 1"
         }
       },
       ["description"]: {
@@ -12092,7 +12092,7 @@ var init_pages_error = __esm({
         definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "description"] },
         valueSerialized: {
           type: "js-serialized",
-          value: "Demo showcasing Vike"
+          value: "Acedia Landing Page"
         }
       }
     };
@@ -12149,7 +12149,7 @@ var init_pages_contact = __esm({
         definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "title"] },
         valueSerialized: {
           type: "js-serialized",
-          value: "My Vike App"
+          value: "Acedia Devs 1"
         }
       },
       ["description"]: {
@@ -12157,7 +12157,7 @@ var init_pages_contact = __esm({
         definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "description"] },
         valueSerialized: {
           type: "js-serialized",
-          value: "Demo showcasing Vike"
+          value: "Acedia Landing Page"
         }
       }
     };
@@ -12214,7 +12214,7 @@ var init_pages_index = __esm({
         definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "title"] },
         valueSerialized: {
           type: "js-serialized",
-          value: "My Vike App"
+          value: "Acedia Devs 1"
         }
       },
       ["description"]: {
@@ -12222,7 +12222,7 @@ var init_pages_index = __esm({
         definedAtData: { "filePathToShowToUser": "/pages/+config.ts", "fileExportPathToShowToUser": ["default", "description"] },
         valueSerialized: {
           type: "js-serialized",
-          value: "Demo showcasing Vike"
+          value: "Acedia Landing Page"
         }
       }
     };
@@ -12473,7 +12473,7 @@ var init_entry = __esm({
           "src": "components/fonts/ClashGrotesk-Variable.woff2"
         },
         "node_modules/.pnpm/vike@0.4.201_react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1__vite@5.4.11/node_modules/vike/dist/esm/client/client-routing-runtime/entry.js": {
-          "file": "assets/entries/entry-client-routing.BlcThnKc.js",
+          "file": "assets/entries/entry-client-routing.Dx1u2Ntn.js",
           "name": "entries/entry-client-routing",
           "src": "node_modules/.pnpm/vike@0.4.201_react-streaming@0.3.43_react-dom@18.3.1_react@18.3.1__react@18.3.1__vite@5.4.11/node_modules/vike/dist/esm/client/client-routing-runtime/entry.js",
           "isEntry": true,
@@ -12487,7 +12487,7 @@ var init_entry = __esm({
           ]
         },
         "virtual:vike:pageConfigValuesAll:client:/pages/_error": {
-          "file": "assets/entries/pages_error.CBHZYqzl.js",
+          "file": "assets/entries/pages_error.ByywHtBD.js",
           "name": "entries/pages/_error",
           "src": "virtual:vike:pageConfigValuesAll:client:/pages/_error",
           "isEntry": true,
@@ -12509,7 +12509,7 @@ var init_entry = __esm({
           ]
         },
         "virtual:vike:pageConfigValuesAll:client:/pages/contact": {
-          "file": "assets/entries/pages_contact.4ocBRaSv.js",
+          "file": "assets/entries/pages_contact.BaA-FkyD.js",
           "name": "entries/pages/contact",
           "src": "virtual:vike:pageConfigValuesAll:client:/pages/contact",
           "isEntry": true,
@@ -12534,7 +12534,7 @@ var init_entry = __esm({
           ]
         },
         "virtual:vike:pageConfigValuesAll:client:/pages/index": {
-          "file": "assets/entries/pages_index.CbBgtv3R.js",
+          "file": "assets/entries/pages_index.QZukjz69.js",
           "name": "entries/pages/index",
           "src": "virtual:vike:pageConfigValuesAll:client:/pages/index",
           "isEntry": true,
