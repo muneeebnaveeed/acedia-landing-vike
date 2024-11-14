@@ -10,7 +10,7 @@ export default {
   Layout: BaseLayout,
 
   // https://vike.dev/head-tags
-  title: "Acedia Devs 1",
+  title: "Acedia Devs",
   description: "Acedia Landing Page",
 
   extends: vikeReact,
