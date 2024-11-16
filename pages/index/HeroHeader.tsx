@@ -16,7 +16,7 @@ export const HeroHeader: FC = () => {
         <div
           className={cn(
             "w-full flex flex-col items-center justify-center gap-6",
-            "md:flex-row md:flex-wrap md:items-end md:gap-8 md:px-20",
+            "md:flex-row md:flex-wrap md:items-end md:gap-8",
             "lg:justify-between",
           )}
         >
