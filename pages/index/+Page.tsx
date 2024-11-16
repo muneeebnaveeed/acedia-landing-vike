@@ -3,8 +3,6 @@ import AcediaGuide114Iamge from "../../assets/acedia guide (1)-14.png";
 import AcediaGuide14Image from "../../assets/acedia guide (1)-14.svg";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 import Collage1Image from "../../assets/collage-1.png";
-import Gun21Image from "../../assets/gun2-1.jpg";
-import HomeHeaderImage from "../../assets/home-header.png";
 import ModelFImage from "../../assets/model-f.png";
 import PressAImage from "../../assets/pressA-1.png";
 import ServiceCardImage from "../../assets/service-image.jpg";
@@ -14,31 +12,12 @@ import { ArrowRightIcon } from "../../components/icons/arrow-right";
 import { LetsBuildSomethingTogether } from "../../components/lets-build-something-together";
 import { Button } from "../../components/ui/button";
 import { ServiceCard } from "./service-card";
+import { HeroHeader } from "./HeroHeader";
 
 export default function Page() {
   return (
     <>
-      <div className="relative">
-        <img src={HomeHeaderImage} className="-z-10 hidden h-auto min-h-[780px] max-w-full md:inline" />
-        <img src={Gun21Image} className="-z-10 h-auto max-h-[1100px] min-h-[900px] w-full object-cover md:hidden" />
-        <div className="absolute bottom-36 w-full md:bottom-14">
-          <div className="flex flex-col items-center justify-center gap-6 px-12 sm:justify-center md:flex-row md:flex-wrap md:items-end md:gap-8 md:px-20 lg:justify-between">
-            <div className="text-center font-serif text-white lg:text-left">
-              <h1 className="text-3xl font-semibold uppercase leading-[80px] md:text-[80px]">The Grave Keeper</h1>
-              <p className="max-w-[1160px] text-base leading-5 md:text-[29px] md:leading-[36px]">
-                A soulslike FPS. A Lovecraftian tale of an archaeologist’s bid for sanity and survival in the cosmic
-                nightmare he finds himself in.
-                <span className="font-bold">Coming early 2025.</span>
-              </p>
-            </div>
-            <div className="shrink-0">
-              <Button variant="lime" icon={<ArrowRightIcon />}>
-                Wishlist on Steam
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeroHeader />
 
       <div className="w-full -translate-y-3 bg-[#02070A]">
         <div className="flex flex-nowrap items-center justify-between gap-20 p-[70px]">
