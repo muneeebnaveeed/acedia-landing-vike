@@ -4,7 +4,6 @@ import AcediaGuide14Image from "../../assets/acedia guide (1)-14.svg";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 import Collage1Image from "../../assets/collage-1.png";
 import ModelFImage from "../../assets/model-f.png";
-import PressAImage from "../../assets/pressA-1.png";
 import ServiceCardImage from "../../assets/service-image.jpg";
 import ServicesGridImage from "../../assets/services-grid.png";
 import TwitterBannerImage from "../../assets/twitter-banner-1.png";
@@ -13,34 +12,16 @@ import { LetsBuildSomethingTogether } from "../../components/lets-build-somethin
 import { Button } from "../../components/ui/button";
 import { ServiceCard } from "./service-card";
 import { HeroHeader } from "./HeroHeader";
+import { PressAToStart } from "./PressAToStart";
 
 export default function Page() {
   return (
     <>
       <HeroHeader />
 
-      <div className="w-full -translate-y-3 bg-[#02070A]">
-        <div className="flex flex-nowrap items-center justify-between gap-20 p-[70px]">
-          <div className="w-full flex-shrink">
-            <div className="w-full max-w-[calc(100%-150px)] font-serif text-white sm:max-w-[calc(100%-280px)] md:max-w-[860px]">
-              <h2 className="mb-[11px] text-2xl font-semibold uppercase leading-6 md:text-[55px] md:leading-[60px]">
-                Your friendly neighborhood Game devs & creatives
-              </h2>
-              <p className="mb-9 max-w-[860px] text-base leading-5 md:text-[27px] md:leading-[36px]">
-                If your neighborhood happens to be Islamabad, Pakistan.
-              </p>
-            </div>
-            <div className="flex w-full justify-center md:justify-start">
-              <Button variant="blue" icon={<ArrowRightIcon />}>
-                More about our game
-              </Button>
-            </div>
-          </div>
-          <div className="absolute right-10 top-5 w-[150px] max-w-[700px] md:static md:min-w-[300px]">
-            <img src={PressAImage} className="h-auto w-full object-contain" />
-          </div>
-        </div>
+      <PressAToStart />
 
+      <div className="w-full -translate-y-3">
         <div className="relative overflow-hidden px-20 pt-0 md:pt-[190px]">
           <img
             src={AcediaGuide114Iamge}

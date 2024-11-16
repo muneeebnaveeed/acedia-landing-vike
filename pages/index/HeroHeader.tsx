@@ -13,7 +13,7 @@ export const HeroHeader: FC = () => {
         "md:bg-[url(/assets/home-header.png)] h-[780px]",
       )}
     >
-      <Container className="flex items-end h-full py-20">
+      <Container className="flex items-end h-full">
         <div
           className={cn(
             "w-full flex flex-col items-start justify-center gap-6",
@@ -31,11 +31,9 @@ export const HeroHeader: FC = () => {
               nightmare he finds himself in. <span className="font-bold">Coming early 2025.</span>
             </p>
           </div>
-          <div className="shrink-0">
-            <Button variant="lime" icon={<ArrowRightIcon />}>
-              Wishlist on Steam
-            </Button>
-          </div>
+          <Button variant="lime" icon={<ArrowRightIcon />}>
+            Wishlist on Steam
+          </Button>
         </div>
       </Container>
     </section>

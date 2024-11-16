@@ -17,7 +17,7 @@ export const Navbar: FC = () => {
   return (
     <>
       <nav className="z-50 w-full absolute left-0 top-0">
-        <Container className="relative flex h-[calc(80px+80px+60px)] items-center justify-between">
+        <Container className="relative flex h-28 sm:h-[calc(80px+80px+60px)] items-center justify-between">
           <div className="block lg:hidden">
             <button
               type="button"
