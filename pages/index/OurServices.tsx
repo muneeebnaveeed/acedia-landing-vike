@@ -17,8 +17,8 @@ export const OurServices: FC = () => {
           Our Services
         </h2>
         <div className="flex flex-wrap md:flex-nowrap items-end gap-16">
-          <div className="pb-[100px] w-full z-10">
-            <div className="mb-6 flex flex-wrap gap-16 w-full">
+          <div className="pb-[100px] w-full z-10 space-y-6">
+            <div className="flex flex-wrap gap-16 w-full">
               <ServiceCard title="Game Development" img={ServiceCardImage}>
                 Need a tiny mobile game developed? We’re your people. Need a big, sprawling 18-hour PC epic? We’re your
                 people.
@@ -61,6 +61,10 @@ export const OurServices: FC = () => {
                 shoot your requirement at us and watch it come to life.
               </ServiceCard>
             </div>
+            <p className="font-sans text-xl font-bold tracking-[-0.56px] leading-[32px] text-[#F7FCDE] pt-6">
+              Wanna look at examples?{" "}
+              <a className="text-[#A2FF00] hover:text-[#8ad900] transition-colors">Check out our Artstation.</a>
+            </p>
           </div>
           <img
             src={ModelFImage}
