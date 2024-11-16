@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Button } from "../../components/ui/button";
 import { Container } from "../../components/container";
 import { cn } from "../../lib/cn";
+import { ArrowRightIcon } from "../../components/icons/arrow-right";
 
 export const HeroHeader: FC = () => {
   return (
@@ -15,12 +16,13 @@ export const HeroHeader: FC = () => {
       <Container className="flex items-end h-full py-20">
         <div
           className={cn(
-            "w-full flex flex-col items-center justify-center gap-6",
+            "w-full flex flex-col items-start justify-center gap-6",
+            "sm:items-center",
             "md:flex-row md:flex-wrap md:items-end md:gap-8",
             "lg:justify-between",
           )}
         >
-          <div className={cn("space-y-2 text-center font-serif text-white", "lg:text-left")}>
+          <div className={cn("space-y-2 font-serif text-white", "text-left", "sm:text-center", "lg:text-left")}>
             <h1 className={cn("text-5xl font-semibold uppercase leading-[50px]", "md:text-[80px] md:leading-[80px]")}>
               The Grave Keeper
             </h1>
@@ -30,7 +32,7 @@ export const HeroHeader: FC = () => {
             </p>
           </div>
           <div className="shrink-0">
-            <Button variant="lime" icon="arrow-right">
+            <Button variant="lime" icon={<ArrowRightIcon />}>
               Wishlist on Steam
             </Button>
           </div>

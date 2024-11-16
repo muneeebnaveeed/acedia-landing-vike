@@ -17,7 +17,7 @@ export const Button: FC<{
         {
           "bg-[#4813D8] hover:bg-[#3d10b8] text-white": variant === "blue",
         },
-        { "px-6 py-1.5 text-base leading-[36px] md:px-8 md:py-2 md:text-lg md:font-medium gap-4": true },
+        { "px-6 py-1.5 text-base leading-[36px]": true },
       )}
     >
       {children}
