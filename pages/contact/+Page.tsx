@@ -5,6 +5,7 @@ import { LetsBuildSomethingTogether } from "../../components/lets-build-somethin
 import AcediaGuide14Image from "../../assets/acedia-guide-(1)-14-services.png";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 import { cn } from "../../lib/cn";
+import { Container } from "../../components/container";
 
 const ContactInput: FC<{ className?: string }> = ({ className }) => {
   return (
@@ -49,34 +50,36 @@ const ContactPage: FC = () => {
     <div className="relative overflow-hidden bg-black text-white w-full">
       <img src={AcediaArt1Image} alt="" className="absolute -right-1/4 top-0 rotate-[270deg]" />
       <img src={AcediaArt1Image} alt="" className="absolute -left-1/4 top-1/3 rotate-[82.5deg]" />
-      <div className="flex w-full justify-between items-end w-[1540px]:items-start">
-        <div className="mt-[150px] lg:mt-[300px] sm:mb-[300px] px-[36px] md:px-20 space-y-12 flex-[2]">
-          <ContactBlock title="Get in Touch" titleVariant="lime">
-            Have an idea you want us to bring to life? Wanna inquire about our services? Just wanna tell us about your
-            day?
-            <br />
-            <span className="text-lime-secondary">contact@acediadevs.com</span> or{" "}
-            <span className="text-lime-secondary">@acediadevs</span> on your social medium of choice.
-          </ContactBlock>
-          <ContactBlock title="Stay Tuned" titleVariant="blue">
-            Enter your email address to receive exclusive artwork and occasional news on The Grave Keeper’s development,
-            or if you just feel like giving a bit of your information away for no&nbsp;reason&nbsp;today.
-          </ContactBlock>
-          <ContactInput className="hidden md:block" />
+      <Container>
+        <div className="flex w-full justify-between items-end w-[1540px]:items-start gap-8">
+          <div className="mt-[150px] lg:mt-[300px] md:mb-[300px] pr-[36px] md:pr-20 space-y-12 flex-[2]">
+            <ContactBlock title="Get in Touch" titleVariant="lime">
+              Have an idea you want us to bring to life? Wanna inquire about our services? Just wanna tell us about your
+              day?
+              <br />
+              <span className="text-lime-secondary">contact@acediadevs.com</span> or{" "}
+              <span className="text-lime-secondary">@acediadevs</span> on your social medium of choice.
+            </ContactBlock>
+            <ContactBlock title="Stay Tuned" titleVariant="blue">
+              Enter your email address to receive exclusive artwork and occasional news on The Grave Keeper’s
+              development, or if you just feel like giving a bit of your information away for no&nbsp;reason&nbsp;today.
+            </ContactBlock>
+            <ContactInput className="hidden md:block" />
+          </div>
+          <img src={AcediaWomanImage} alt="" className="z-10 min-h-[500px] hidden md:inline flex-[1]" />
         </div>
-        <img src={AcediaWomanImage} alt="" className="z-10 min-h-[700px] hidden sm:inline flex-[1]" />
-      </div>
 
-      <div className="relative w-full px-10 mt-[350px] sm:hidden">
-        <img src={AcediaWomanImage} alt="" className="absolute left-1/2 -translate-x-1/2 bottom-0 z-10" />
-        <ContactInput />
-      </div>
+        <div className="relative w-full px-10 mt-[350px] md:hidden">
+          <img src={AcediaWomanImage} alt="" className="absolute left-1/2 -translate-x-1/2 bottom-0 z-10" />
+          <ContactInput />
+        </div>
+      </Container>
 
-      <div className="relative bg-transparent sm:bg-[#161616] overflow-hidden">
-        <img src={AcediaGuide14Image} alt="" className="sm:hidden absolute left-1/2 bottom-0 rotate-[130deg]" />
+      <div className="relative bg-transparent overflow-hidden">
+        <img src={AcediaGuide14Image} alt="" className="md:hidden absolute left-1/2 bottom-0 rotate-[130deg]" />
 
-        <img src={AcediaGuide14Image} className="hidden sm:inline absolute right-0 top-0" height={380} width={830} />
-        <img src={AcediaGuide18Image} className="hidden sm:inline absolute left-0 -top-1/2" height={630} width={730} />
+        <img src={AcediaGuide14Image} className="hidden md:inline absolute right-0 top-0" height={380} width={830} />
+        <img src={AcediaGuide18Image} className="hidden md:inline absolute left-0 -top-1/2" height={630} width={730} />
         <LetsBuildSomethingTogether />
       </div>
     </div>
