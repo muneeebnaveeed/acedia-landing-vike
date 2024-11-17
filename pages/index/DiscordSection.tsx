@@ -8,7 +8,7 @@ export const DiscordSection: FC = () => {
   return (
     <div className="relative" id="portfolio">
       <img src={TwitterBannerImage} className="w-full h-full min-h-[470px] max-h-[600px] object-cover" />
-      <Container className="absolute left-0 top-0 w-full h-full flex flex-col justify-center items-start font-serif">
+      <Container className="absolute left-1/2 -translate-x-1/2 top-0 w-full h-full flex flex-col justify-center items-start font-serif">
         <h2 className="mb-[24px] text-2xl lg:text-[50px] font-semibold uppercase leading-8 lg:leading-[79px] tracking-[-0.56px] text-white">
           JOIN THE GRAVE KEEPER’S DISCORD
         </h2>
