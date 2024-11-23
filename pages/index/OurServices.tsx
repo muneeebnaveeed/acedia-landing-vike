@@ -11,7 +11,7 @@ export const OurServices: FC = () => {
     <div className="relative bg-black">
       <Container className="!pt-0 !pb-2.5">
         <h2
-          id="our-services"
+          id="services"
           className="mb-12 font-serif text-3xl text-center md:text-left md:text-[60px] font-semibold uppercase leading-[88px] text-lime-primary underline underline-offset-8"
         >
           Our Services
