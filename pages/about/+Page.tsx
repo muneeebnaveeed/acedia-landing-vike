@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 import AcediaGuide18AboutImage from "../../assets/acedia guide (1)-18-about.png";
 import { Container } from "../../components/container";
