@@ -1,16 +1,19 @@
-import { FC, ReactNode } from "react";
+import { FC, HTMLAttributeAnchorTarget, ReactNode } from "react";
 import { cn } from "../../lib/cn";
 
-export const Button: FC<{
+export const LinkButton: FC<{
   children: ReactNode;
   variant: "blue" | "lime";
-  type?: "button" | "submit";
+  href: string;
   size?: "base" | "sm";
   icon?: ReactNode;
-}> = ({ children, variant, type = "button", icon }) => {
+  target?: HTMLAttributeAnchorTarget;
+}> = ({ children, variant, href, target, icon }) => {
   return (
-    <button
-      type={type}
+    <a
+      href={href}
+      target={target}
+      rel={target === "_blank" ? "noreferrer" : undefined}
       className={cn(
         "font-regular flex items-center rounded-full font-serif transition-colors gap-4",
         { "bg-lime-primary hover:bg-[#8ad900] text-black": variant === "lime" },
@@ -22,6 +25,6 @@ export const Button: FC<{
     >
       {children}
       {icon}
-    </button>
+    </a>
   );
 };

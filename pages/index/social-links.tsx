@@ -5,14 +5,15 @@ import { YoutubeIcon } from "../../components/icons/social/youtube";
 import { TiktokIcon } from "../../components/icons/social/tiktok";
 import { XSocialIcon } from "../../components/icons/social/x-social";
 import { EmailIcon } from "../../components/icons/social/email";
+import { ACEDIA_CONTACT_EMAIL } from "../../lib/constants";
 
 const links = [
-  { href: "instagram.com/acediadevs", icon: InstagramIcon },
-  { href: "linkedin.com/company/acediadevs", icon: LinkedInIcon },
-  { href: "youtube.com/@acediadevs", icon: YoutubeIcon },
-  { href: "tiktok.com/@acediadevs", icon: TiktokIcon },
-  { href: "x.com/acediadevs", icon: XSocialIcon },
-  { href: "mailto:contact@acediadevs.com", icon: EmailIcon },
+  { href: "http://instagram.com/acediadevs", icon: InstagramIcon },
+  { href: "http://linkedin.com/company/acediadevs", icon: LinkedInIcon },
+  { href: "http://youtube.com/@acediadevs", icon: YoutubeIcon },
+  { href: "http://tiktok.com/@acediadevs", icon: TiktokIcon },
+  { href: "http://x.com/acediadevs", icon: XSocialIcon },
+  { href: `mailto:${ACEDIA_CONTACT_EMAIL}`, icon: EmailIcon },
 ] as const;
 
 export const SocialLinks: FC = () => {

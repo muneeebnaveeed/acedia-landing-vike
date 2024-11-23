@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect, useRef } from "react";
 import AcediaArt1Image from "../../assets/acedia-art-1.svg";
 import AcediaWomanImage from "../../assets/acedia-woman.svg";
 import { LetsBuildSomethingTogether } from "../../components/lets-build-something-together";
@@ -6,20 +6,37 @@ import AcediaGuide14Image from "../../assets/acedia-guide-(1)-14-services.png";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 import { cn } from "../../lib/cn";
 import { Container } from "../../components/container";
+import { useForm } from "@formspree/react";
+import { toast } from "sonner";
 
 const ContactInput: FC<{ className?: string }> = ({ className }) => {
+  const [state, handleSubmit] = useForm("mrgnkwlr");
+  const emailInputRef = useRef<HTMLInputElement | null>(null);
+
+  const isPending = state.submitting;
+
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success("You have successfully subscribed", { classNames: { toast: "p-4" } });
+      if (emailInputRef.current) emailInputRef.current.value = "";
+    }
+  }, [state.succeeded]);
+
   return (
-    <form className={cn("w-full relative h-12 z-20", className)}>
+    <form className={cn("w-full relative h-12 z-20", className)} onSubmit={handleSubmit}>
       <input
+        ref={emailInputRef}
         type="text"
+        name="email"
         className="w-full rounded-[13px] px-3 py-2 h-full bg-[#F8F8F8] border-none bg-opacity-35 font-medium text-[#F7FCDE] outline-none"
         placeholder="Enter your email"
       />
       <button
         type="submit"
-        className="h-full px-7 rounded-[13px] bg-[#F8F8F8] bg-opacity-35 font-serif font-medium text-[#F7FCDE] hover:bg-opacity-45 absolute right-0 top-0"
+        className="h-full px-7 rounded-[13px] bg-lime-primary bg-opacity-50 font-serif font-medium text-[#F7FCDE] hover:bg-opacity-45 absolute right-0 top-0"
+        disabled={isPending}
       >
-        Send
+        {isPending ? "Sending..." : "Send"}
       </button>
     </form>
   );

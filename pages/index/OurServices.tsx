@@ -5,6 +5,7 @@ import ServicesGridImage from "../../assets/services-bg-grid.png";
 
 import { ServiceCard } from "./service-card";
 import { Container } from "../../components/container";
+import { ACEDIA_ARTSTATION_PROFILE } from "../../lib/constants";
 
 export const OurServices: FC = () => {
   return (
@@ -28,7 +29,7 @@ export const OurServices: FC = () => {
                 gamers) is up for any development challenge.
                 <br />
                 <br />
-                <span className="font-semibold text-lime-secondary">
+                <span className="font-semibold text-lime-primary">
                   You bring us the idea, we bring you the execution.
                 </span>
               </ServiceCard>
@@ -38,10 +39,16 @@ export const OurServices: FC = () => {
                 film & TV to product animation & visualization to motion design for advertisement.
                 <br />
                 <br />
-                And we absolutely hate Autodesk Maya. That should tell you something about how good we’re at it.{" "}
-                <span className="font-semibold text-lime-secondary">
+                And we absolutely hate Autodesk Maya. That should tell you something about how good we’re at it. <br />
+                <br />
+                <a
+                  href={ACEDIA_ARTSTATION_PROFILE}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-lime-primary hover:text-lime-secondary cursor-pointer"
+                >
                   Check out some of our animation work at our Artstation.
-                </span>
+                </a>
               </ServiceCard>
             </div>
             <div className="flex flex-wrap gap-16 w-full">
@@ -63,7 +70,14 @@ export const OurServices: FC = () => {
             </div>
             <p className="font-sans text-xl font-bold tracking-[-0.56px] leading-[32px] text-[#F7FCDE] pt-6">
               Wanna look at examples?{" "}
-              <a className="text-[#A2FF00] hover:text-[#8ad900] transition-colors">Check out our Artstation.</a>
+              <a
+                href={ACEDIA_ARTSTATION_PROFILE}
+                target="_blank"
+                rel="noreferrer"
+                className="text-lime-primary hover:text-lime-secondary transition-colors cursor-pointer"
+              >
+                Check out our Artstation.
+              </a>
             </p>
           </div>
           <img

@@ -1,8 +1,9 @@
 import { FC } from "react";
 import TwitterBannerImage from "../../assets/twitter-banner-1.png";
 import { ArrowRightIcon } from "../../components/icons/arrow-right";
-import { Button } from "../../components/ui/button";
+import { LinkButton } from "../../components/ui/link-button";
 import { Container } from "../../components/container";
+import { ACEDIA_DISCORD_SERVER } from "../../lib/constants";
 
 export const DiscordSection: FC = () => {
   return (
@@ -16,9 +17,9 @@ export const DiscordSection: FC = () => {
           Dev updates, exclusive artwork from the game and behind-the scenes from the team, it’s all here. Wanna be a
           part of our little community and see The Grave Keeper come to life in real-time?
         </p>
-        <Button variant="blue" icon={<ArrowRightIcon />}>
+        <LinkButton href={ACEDIA_DISCORD_SERVER} target="_blank" variant="blue" icon={<ArrowRightIcon />}>
           Join Up!
-        </Button>
+        </LinkButton>
       </Container>
     </div>
   );

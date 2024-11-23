@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button } from "../../components/ui/button";
+import { LinkButton } from "../../components/ui/link-button";
 import { Container } from "../../components/container";
 import { cn } from "../../lib/cn";
 import { ArrowRightIcon } from "../../components/icons/arrow-right";
@@ -31,9 +31,9 @@ export const HeroHeader: FC = () => {
               nightmare he finds himself in. <span className="font-bold">Coming early 2025.</span>
             </p>
           </div>
-          <Button variant="lime" icon={<ArrowRightIcon />}>
+          <LinkButton href="" target="_blank" variant="lime" icon={<ArrowRightIcon />}>
             Wishlist on Steam
-          </Button>
+          </LinkButton>
         </div>
       </Container>
     </section>

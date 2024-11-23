@@ -1,9 +1,10 @@
 import { FC } from "react";
-import { Button } from "../../components/ui/button";
+import { LinkButton } from "../../components/ui/link-button";
 import { ArrowRightIcon } from "../../components/icons/arrow-right";
 import PressAImage from "../../assets/pressA-1.png";
 import { Container } from "../../components/container";
 import { cn } from "../../lib/cn";
+import { ACEDIA_DISCORD_SERVER } from "../../lib/constants";
 
 export const PressAToStart: FC = () => {
   return (
@@ -25,9 +26,9 @@ export const PressAToStart: FC = () => {
             </p>
           </div>
           <div className="flex w-full justify-center md:justify-start">
-            <Button variant="blue" icon={<ArrowRightIcon />}>
+            <LinkButton href={ACEDIA_DISCORD_SERVER} target="_blank" variant="blue" icon={<ArrowRightIcon />}>
               More about our game
-            </Button>
+            </LinkButton>
           </div>
         </div>
         <img
