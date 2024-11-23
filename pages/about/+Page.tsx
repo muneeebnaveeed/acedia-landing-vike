@@ -1,15 +1,7 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import AcediaGuide18Image from "../../assets/acedia guide (1)-18.svg";
 import AcediaGuide18AboutImage from "../../assets/acedia guide (1)-18-about.png";
 import { Container } from "../../components/container";
-import Imti1 from "../../assets/Imti1.svg";
-import Tooba1 from "../../assets/Tooba1.svg";
-import Hussain1 from "../../assets/Hussain1.svg";
-import Hassaan1 from "../../assets/Hassaan1.svg";
-import Imti2 from "../../assets/Imti2.png";
-import Tooba2 from "../../assets/Tooba2.png";
-import Hussain2 from "../../assets/Hussain2.png";
-import Hassaan2 from "../../assets/Hassaan2.png";
 import AcediaGuide14Image from "../../assets/acedia-guide-(1)-14-services.png";
 import { LetsBuildSomethingTogether } from "../../components/lets-build-something-together";
 
