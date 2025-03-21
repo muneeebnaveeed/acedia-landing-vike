@@ -78,8 +78,8 @@ const ContactPage: FC = () => {
               <span className="text-lime-secondary">@acediadevs</span> on your social medium of choice.
             </ContactBlock>
             <ContactBlock title="Stay Tuned" titleVariant="blue">
-              Enter your email address to receive exclusive artwork and occasional news on The Grave Keeper’s
-              development, or if you just feel like giving a bit of your information away for no&nbsp;reason&nbsp;today.
+              Enter your email address to receive exclusive artwork and occasional news on Bloodsmith’s development, or
+              if you just feel like giving a bit of your information away for no&nbsp;reason&nbsp;today.
             </ContactBlock>
             <ContactInput className="hidden md:block" />
           </div>
