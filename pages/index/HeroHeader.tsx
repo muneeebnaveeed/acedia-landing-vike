@@ -24,14 +24,19 @@ export const HeroHeader: FC = () => {
         >
           <div className={cn("space-y-2 font-serif text-white", "text-left", "sm:text-center", "lg:text-left")}>
             <h1 className={cn("text-5xl font-semibold uppercase leading-[50px]", "md:text-[80px] md:leading-[80px]")}>
-              The Grave Keeper
+              Bloodsmith
             </h1>
             <p className={cn("max-w-[1160px] text-xl leading-5", "md:text-[29px] md:leading-[36px]")}>
               A soulslike FPS. A Lovecraftian tale of an archaeologist’s bid for sanity and survival in the cosmic
-              nightmare he finds himself in. <span className="font-bold">Coming early 2025.</span>
+              nightmare he finds himself in. <span className="font-bold">Coming soon.</span>
             </p>
           </div>
-          <LinkButton href="" target="_blank" variant="lime" icon={<ArrowRightIcon />}>
+          <LinkButton
+            href="https://store.steampowered.com/app/3113350/Bloodsmith/"
+            target="_blank"
+            variant="lime"
+            icon={<ArrowRightIcon />}
+          >
             Wishlist on Steam
           </LinkButton>
         </div>
